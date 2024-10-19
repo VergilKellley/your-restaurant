@@ -107,11 +107,16 @@
                         <span class="span mobile-display" data-nav-toggler>Events</span>
                     </a>
                     <div class="dropdown">
-                        <button class="dropbtn">></button>
+                        <!-- <button class="dropbtn">></button> -->
+                        <i class="dropbtn fa-solid fa-caret-down"
+                            style="display:flex; gap:10px; background:#000;"><span> Edit Site</span></i>
                         <div class="dropdown-content">
-                            <a href="edit_header_info">Edit Header</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
+                            <a href="edit_header_info" target="_blank">Header</a>
+                            <a href="edit_hero_info" target="_blank">Hero</a>
+                            <a href="edit_promo_info" target="_blank">Promotions</a>
+                            <a href="edit_about_info" target="_blank">About</a>
+                            <a href="edit_special_dish_info" target="_blank">Special Dish</a>
+                            <a href="edit_menu_info" target="_blank">Menu</a>
                         </div>
                     </div>
                 </li>
@@ -184,8 +189,6 @@
                         </div>
                     </div>
 
-                    <!--<p style="margin-top:20px" class="label-2 section-subtitle slider-reveal">Tradational & Local</p>-->
-
                     <p style="margin-top:20px" class="label-2 section-subtitle slider-reveal hide-text">
                         <?= $hero_top_text_1; ?></p>
 
@@ -199,7 +202,6 @@
                             style="width: 65%; display: flex;flex-direction: column;align-items: center;"
                             class="display-1 hero-title slider-reveal">
                             <?= $hero_large_text_1; ?>
-                            <!-- <img class="header-award" src="./assets/images/diners-choice-award-2024.png" width="115"  alt="your restaurant logo"> -->
                         </h1>
                     </div>
                     <p class="body-2 hero-text slider-reveal">
@@ -231,22 +233,16 @@
                         class="label-2 section-subtitle slider-reveal mobile-online-ordering"
                         target="_blank"><?= $hero_top_btn_text_2; ?></a>
 
-                    <!--<p class="label-2 section-subtitle slider-reveal">delightful experience</p>-->
 
                     <h1 class="display-1 hero-title slider-reveal">
                         <?= $hero_large_text_2; ?>
                     </h1>
-                    <!-- <h1 class="display-1 hero-title slider-reveal">
-              Flavors Inspired by <br>
-              the Seasons
-            </h1> -->
+
 
                     <p class="body-2 hero-text slider-reveal">
                         <?= $hero_bottom_text_2; ?>
                     </p>
-                    <!-- <p class="body-2 hero-text slider-reveal">
-              Come with family & feel the joy of mouthwatering food
-            </p> -->
+
 
                     <a href="<?= $hero_bottom_btn_link_2; ?>" class="btn btn-primary slider-reveal" target="_blank">
                         <span class="text text-1"><?= $hero_bottom_btn_text_2; ?></span>
@@ -266,11 +262,10 @@
                         </div>
                     </div>
 
-                    <!--<p class="label-2 section-subtitle slider-reveal">amazing & delicious</p>-->
 
                     <p style="margin-top:20px" class="label-2 section-subtitle slider-reveal hide-text">
                         <?= $hero_top_text_3; ?></p>
-                    <!-- <p style="margin-top:20px" class="label-2 section-subtitle slider-reveal hide-text">amazing & delicious</p> -->
+
 
                     <a href="<?= $hero_top_btn_link_3; ?>" style="margin-top:20px"
                         class="label-2 section-subtitle slider-reveal mobile-online-ordering"
@@ -279,16 +274,10 @@
                     <h1 class="display-1 hero-title slider-reveal">
                         <?= $hero_large_text_3; ?>
                     </h1>
-                    <!-- <h1 class="display-1 hero-title slider-reveal">
-              Where Quisine & <br> Ambiance Harmonize
-            </h1> -->
 
                     <p class="body-2 hero-text slider-reveal">
                         <?= $hero_bottom_text_3; ?>
                     </p>
-                    <!-- <p class="body-2 hero-text slider-reveal">
-              Come with family & feel the joy of mouthwatering food
-            </p> -->
 
                     <a href="<?= $hero_bottom_btn_link_3; ?>" class="btn btn-primary slider-reveal" target="_blank">
                         <span class="text text-1"><?= $hero_bottom_btn_text_3; ?></span>
@@ -298,31 +287,7 @@
 
                 </li>
 
-                <!-- <li class="slider-item" data-hero-slider-item>
 
-            <div class="slider-bg">
-              <img src="./assets/images/restaurant-hero.jpg" width="1880" height="950" alt="your restaurant logo" class="img-cover">
-              <div style="background-color: rgba(0,0,0,.7);position:absolute; height: 100%; width: 100%;top:0; bottom:0; left:0; right:0; z-index: 3;"></div>
-            </div>
-
-            <p class="label-2 section-subtitle slider-reveal">amazing & delicious</p>
-
-            <h1 class="display-1 hero-title slider-reveal">
-              Where every flavor <br>
-              tells a story
-            </h1>
-
-            <p class="body-2 hero-text slider-reveal">
-              Come with family & feel the joy of mouthwatering food
-            </p>
-
-            <a href="https://www.opentable.com/restref/client/?restref=1096087&lang=en-US&ot_source=Restaurant%20website&corrid=db856316-3e84-4806-b14b-7e55c1f1e81a" class="btn btn-primary slider-reveal" target="_blank">
-              <span class="text text-1">Reservations</span>
-
-              <span class="text text-2" aria-hidden="true">Reservations</span>
-            </a>
-
-          </li> -->
 
             </ul>
 
@@ -333,13 +298,6 @@
             <button class="slider-btn next" aria-label="slide to next" data-next-btn>
                 <ion-icon name="chevron-forward"></ion-icon>
             </button>
-
-            <!-- <a style="display: flex; align-items: center; justify-content: center; flex-direction: column;" href="https://www.jimotowinnetka.com/" class="hero-btn has-after" target="_blank">
-          <img src="./assets/images/hero-icon.png" width="48" height="48" alt="booking icon">
-          
-          <span style="color: #333; text-transform: lowercase;" class="label-2 text-center span"></span>
-        </a> -->
-
         </section>
 
 
@@ -347,18 +305,18 @@
 
 
         <!-- 
-        - #SERVICE
+        - #PROMOTIONS
       -->
 
         <section id="promotions" class="section service bg-black-10 text-center" aria-label="service">
             <div class="container">
 
-                <p class="section-subtitle label-2">Flavors For Royalty</p>
+                <p class="section-subtitle label-2"><?= $small_top_title; ?></p>
 
-                <h2 class="headline-1 section-title">Promotions</h2>
+                <h2 class="headline-1 section-title"><?= $main_title; ?></h2>
 
                 <p class="section-text">
-                    Join us for these special promotions.
+                    <?= $sub_title; ?>
                 </p>
 
                 <ul class="grid-list">
@@ -369,8 +327,8 @@
                             <a href="#" class="has-before hover:shine">
                                 <figure class="card-banner img-holder">
                                     <!-- <figure class="card-banner img-holder" style="--width: 285; --height: 336;"> -->
-                                    <img style="width: 100%;" src="./assets/images/food-6.jpg" loading="lazy"
-                                        alt="Breakfast">
+                                    <img style="width: 100%;" src="./assets/images/<?= $promo_img_1; ?>" loading="lazy"
+                                        alt="<?= $promo_img_1; ?>">
                                     <!-- <img src="./assets/images/promotions-1.png" width="285" height="336" loading="lazy" alt="Breakfast"
                      class="img-cover" > -->
                                 </figure>
@@ -379,9 +337,9 @@
                             <div class="card-content">
 
                                 <h3 class="title-4 card-title">
-                                    50% Off Burger Deals!
+                                    <?= $promo_img_title_1; ?>
                                 </h3>
-                                <p>minus voluptatibus nesciunt soluta reprehenderit doloremque eos nemo.</p>
+                                <p><?= $promo_img_text_1; ?></p>
 
                                 <!-- <a href="#menu" class="btn-text hover-underline label-2">View Menu</a> -->
 
@@ -396,8 +354,8 @@
                             <a href="#" class="has-before hover:shine">
                                 <figure class="card-banner img-holder">
                                     <!-- <figure class="card-banner img-holder" style="--width: 285; --height: 336;"> -->
-                                    <img style="width: 100%;" src="./assets/images/food-7.jpg" loading="lazy"
-                                        alt="Appetizers">
+                                    <img style="width: 100%;" src="./assets/images/<?= $promo_img_2; ?>" loading="lazy"
+                                        alt="<?= $promo_img_desc_2; ?>">
                                     <!-- <img src="./assets/images/promotions-2.png" width="285" height="336" loading="lazy" alt="Appetizers"> -->
                                     <!-- <img src="./assets/images/food-1.png" width="285" height="336" loading="lazy" alt="Appetizers"
                       class="img-cover"> -->
@@ -407,10 +365,9 @@
                             <div class="card-content">
 
                                 <h3 class="title-4 card-title">
-                                    50% Off select wines!
+                                    <?= $promo_img_title_2; ?>
                                 </h3>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni minus voluptatibus
-                                    nesciunt soluta reprehenderit doloremque eos nemo </p>
+                                <p><?= $promo_img_text_2; ?></p>
                                 <!-- <a href="#menu" class="btn-text hover-underline label-2">View Menu</a> -->
 
                             </div>
@@ -424,8 +381,8 @@
                             <a href="#" class="has-before hover:shine">
                                 <figure class="card-banner img-holder">
                                     <!-- <figure class="card-banner img-holder" style="--width: 285; --height: 336;"> -->
-                                    <img src="./assets/images/promotions-3.jpg" loading="lazy" alt="Drinks"
-                                        class="img-cover">
+                                    <img src="./assets/images/<?= $promo_img_3; ?>" loading="lazy"
+                                        alt="<?= $promo_img_desc_3; ?>" class="img-cover">
                                     <!-- <img src="./assets/images/food-3.png" width="285" height="336" loading="lazy" alt="Drinks"
                       class="img-cover"> -->
                                 </figure>
@@ -434,11 +391,10 @@
                             <div class="card-content">
 
                                 <h3 class="title-4 card-title">
-                                    Happy Hour!
+                                    <?= $promo_img_title_3; ?>
                                 </h3>
                                 <h4>Mon-Thurs 2pm-4pm</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni minus voluptatibus
-                                    nesciunt soluta reprehenderit doloremque eos nemo</p>
+                                <p><?= $promo_img_text_3; ?></p>
 
                                 <!-- <a href="#menu" class="btn-text hover-underline label-2">View Menu</a> -->
 
@@ -470,19 +426,15 @@
 
                 <div class="about-content">
 
-                    <p class="label-2 section-subtitle" id="about-label">Our Story</p>
+                    <p class="label-2 section-subtitle" id="about-label"><?= $about_small_title; ?></p>
 
-                    <h2 class="headline-1 section-title">Every Flavor Tells a Story</h2>
+                    <h2 class="headline-1 section-title"><?= $about_main_title; ?></h2>
 
                     <p class="section-text">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni minus voluptatibus nesciunt
-                        soluta reprehenderit doloremque eos nemo veniam vitae vero illo hic possimus error delectus
-                        temporibus quas iusto, in ullam! Distinctio, iure vero dolore adipisci corrupti, beatae ad
-                        perspiciatis consequuntur facere voluptatem quo maxime velit debitis, deleniti assumenda commodi
-                        id?.
+                        <?= $about_text; ?>
                     </p>
 
-                    <div class="contact-label">We look forward to seeing you!</div>
+                    <p class="contact-label"><?= $about_sub_title; ?></p>
 
                     <a href="tel:+804001234567" class="body-1 contact-number hover-underline">(312) 555-5555</a>
 
@@ -508,14 +460,14 @@
 
                 <figure class="about-banner">
 
-                    <img src="./assets/images/food-12.jpg" width="570" height="570" loading="lazy" alt="about banner"
-                        class="w-100" data-parallax-item data-parallax-speed="1">
+                    <img src="./assets/images/<?= $about_large_img; ?>" width="570" height="570" loading="lazy"
+                        alt="<?= $about_large_img_desc; ?>" class="w-100" data-parallax-item data-parallax-speed="1">
                     <!-- <img src="./assets/images/about-banner.jpg" width="570" height="570" loading="lazy" alt="about banner"
               class="w-100" data-parallax-item data-parallax-speed="1"> -->
 
                     <div class="abs-img abs-img-1 has-before" data-parallax-item data-parallax-speed="1.55">
-                        <img src="./assets/images/chef.jpg" width="285" height="285" loading="lazy" alt=""
-                            class="w-100">
+                        <img src="./assets/images/<?= $about_small_img; ?>" width="285" height="285" loading="lazy"
+                            alt="<?= $about_small_img_desc; ?>" class="w-100">
                         <!-- <img src="./assets/images/mark.png" width="285" height="285" loading="lazy" alt=""
                 class="w-100"> -->
                         <!-- <img src="./assets/images/about-abs-image.jpg" width="285" height="285" loading="lazy" alt=""
@@ -526,7 +478,7 @@
                         class="abs-img abs-img-2 has-before">
                         <!-- <img src="./assets/images/badge-2.png" width="133" height="134" loading="lazy" alt=""> -->
                         <p>Since</p>
-                        <h1 style="font-size: 3rem;">1999</h1>
+                        <h1 style="font-size: 3rem;"><?= $about_since_year; ?></h1>
                     </div>
 
                 </figure>
@@ -536,10 +488,6 @@
             </div>
         </section>
 
-
-
-
-
         <!-- 
         - #SPECIAL DISH
       -->
@@ -547,8 +495,8 @@
         <section class="special-dish text-center" aria-labelledby="dish-label">
 
             <div class="special-dish-banner">
-                <img src="./assets/images/food-11.jpg" width="940" height="900" loading="lazy" alt="special dish"
-                    class="img-cover">
+                <img src="./assets/images/<?= $special_dish_img; ?>" width="940" height="900" loading="lazy"
+                    alt="special dish" class="img-cover">
             </div>
 
             <div class="special-dish-content bg-black-10">
@@ -558,20 +506,18 @@
                     <img src="./assets/images/badge-1.png" width="28" height="41" loading="lazy" alt="badge"
                         class="abs-img">
 
-                    <p class="section-subtitle label-2">Farm Fresh</p>
+                    <p class="section-subtitle label-2"><?= $special_dish_small_title; ?></p>
 
-                    <h2 class="headline-1 section-title">Only the freshest ingredients</h2>
+                    <h2 class="headline-1 section-title"><?= $special_dish_main_title; ?></h2>
 
                     <p class="section-text">
-                        Lorem Ipsum is simply dummy text of the printingand typesetting industry lorem Ipsum has been
-                        the
-                        industrys standard dummy text ever since the when an unknown printer took a galley of type.
+                        <?= $special_dish_text; ?>
                     </p>
 
                     <div class="wrapper">
-                        <del class="del body-3">$40.00</del>
+                        <del class="del body-3">$<?= $special_dish_old_price; ?></del>
 
-                        <span class="span body-1">$20.00</span>
+                        <span class="span body-1">$<?= $special_dish_sale_price; ?></span>
                     </div>
 
                     <a href="#" class="btn btn-primary">
@@ -585,7 +531,8 @@
 
             <img src="./assets/images/shape-4.png" width="179" height="359" loading="lazy" alt="" class="shape shape-1">
 
-            <img src="./assets/images/shape-9.png" width="351" height="462" loading="lazy" alt="" class="shape shape-2">
+            <img src="./assets/images/<?= $special_dish_bkgd_img; ?>" width="351" height="462" loading="lazy"
+                alt="<?= $special_dish_bkgd_img_dec; ?>" class="shape shape-2">
 
         </section>
 
@@ -609,17 +556,18 @@
                     <li>
                         <div class="menu-card hover:card">
 
-                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                                <img src="./assets/images/menu-1.png" width="100" height="100" loading="lazy"
-                                    alt="Greek Salad" class="img-cover">
-                            </figure>
+
 
                             <div>
 
                                 <div class="title-wrapper">
-                                    <h3 class="title-3">
-                                        <a href="#" class="card-title">Greek Salad</a>
-                                    </h3>
+                                    <div style="display:flex; gap:7px">
+                                        <span>1. </span>
+                                        <h3 class="title-3">
+                                            <a href="#" class="card-title">Greek Salad</a>
+                                        </h3>
+                                    </div>
+
 
                                     <span class="badge label-1">Seasonal</span>
 
@@ -631,25 +579,24 @@
                                 </p>
 
                             </div>
-
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                                <img src="./assets/images/menu-1.png" width="100" height="100" loading="lazy"
+                                    alt="Greek Salad" class="img-cover">
+                            </figure>
                         </div>
                     </li>
 
                     <li>
                         <div class="menu-card hover:card">
 
-                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                                <img src="./assets/images/menu-2.png" width="100" height="100" loading="lazy"
-                                    alt="Lasagne" class="img-cover">
-                            </figure>
-
                             <div>
-
                                 <div class="title-wrapper">
-                                    <h3 class="title-3">
-                                        <a href="#" class="card-title">Lasagne</a>
-                                    </h3>
-
+                                    <div style="display:flex; gap:7px">
+                                        <span>2. </span>
+                                        <h3 class="title-3">
+                                            <a href="#" class="card-title">Lasagne</a>
+                                        </h3>
+                                    </div>
                                     <span class="span title-2">$40.00</span>
                                 </div>
 
@@ -658,25 +605,23 @@
                                 </p>
 
                             </div>
-
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                                <img src="./assets/images/menu-2.png" width="100" height="100" loading="lazy"
+                                    alt="Lasagne" class="img-cover">
+                            </figure>
                         </div>
                     </li>
 
                     <li>
                         <div class="menu-card hover:card">
-
-                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                                <img src="./assets/images/menu-3.png" width="100" height="100" loading="lazy"
-                                    alt="Butternut Pumpkin" class="img-cover">
-                            </figure>
-
                             <div>
-
                                 <div class="title-wrapper">
-                                    <h3 class="title-3">
-                                        <a href="#" class="card-title">Butternut Pumpkin</a>
-                                    </h3>
-
+                                    <div style="display:flex; gap:7px">
+                                        <span>3. </span>
+                                        <h3 class="title-3">
+                                            <a href="#" class="card-title">Butternut Pumpkin</a>
+                                        </h3>
+                                    </div>
                                     <span class="span title-2">$10.00</span>
                                 </div>
 
@@ -685,25 +630,23 @@
                                 </p>
 
                             </div>
-
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                                <img src="./assets/images/menu-3.png" width="100" height="100" loading="lazy"
+                                    alt="Butternut Pumpkin" class="img-cover">
+                            </figure>
                         </div>
                     </li>
 
                     <li>
                         <div class="menu-card hover:card">
-
-                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                                <img src="./assets/images/menu-4.png" width="100" height="100" loading="lazy"
-                                    alt="Tokusen Wagyu" class="img-cover">
-                            </figure>
-
                             <div>
-
                                 <div class="title-wrapper">
-                                    <h3 class="title-3">
-                                        <a href="#" class="card-title">Tokusen Wagyu</a>
-                                    </h3>
-
+                                    <div style="display:flex; gap:7px">
+                                        <span>4. </span>
+                                        <h3 class="title-3">
+                                            <a href="#" class="card-title">Tokusen Wagyu</a>
+                                        </h3>
+                                    </div>
                                     <span class="badge label-1">New</span>
 
                                     <span class="span title-2">$39.00</span>
@@ -714,25 +657,23 @@
                                 </p>
 
                             </div>
-
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                                <img src="./assets/images/menu-4.png" width="100" height="100" loading="lazy"
+                                    alt="Tokusen Wagyu" class="img-cover">
+                            </figure>
                         </div>
                     </li>
 
                     <li>
                         <div class="menu-card hover:card">
-
-                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                                <img src="./assets/images/menu-5.png" width="100" height="100" loading="lazy"
-                                    alt="Olivas Rellenas" class="img-cover">
-                            </figure>
-
                             <div>
-
                                 <div class="title-wrapper">
-                                    <h3 class="title-3">
-                                        <a href="#" class="card-title">Olivas Rellenas</a>
-                                    </h3>
-
+                                    <div style="display:flex; gap:7px">
+                                        <span>5. </span>
+                                        <h3 class="title-3">
+                                            <a href="#" class="card-title">Olivas Rellenas</a>
+                                        </h3>
+                                    </div>
                                     <span class="span title-2">$25.00</span>
                                 </div>
 
@@ -742,25 +683,23 @@
                                 </p>
 
                             </div>
-
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                                <img src="./assets/images/menu-5.png" width="100" height="100" loading="lazy"
+                                    alt="Olivas Rellenas" class="img-cover">
+                            </figure>
                         </div>
                     </li>
 
                     <li>
                         <div class="menu-card hover:card">
-
-                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                                <img src="./assets/images/menu-6.png" width="100" height="100" loading="lazy"
-                                    alt="Opu Fish" class="img-cover">
-                            </figure>
-
                             <div>
-
                                 <div class="title-wrapper">
-                                    <h3 class="title-3">
-                                        <a href="#" class="card-title">Opu Fish</a>
-                                    </h3>
-
+                                    <div style="display:flex; gap:7px">
+                                        <span>6. </span>
+                                        <h3 class="title-3">
+                                            <a href="#" class="card-title">Opu Fish</a>
+                                        </h3>
+                                    </div>
                                     <span class="span title-2">$49.00</span>
                                 </div>
 
@@ -769,7 +708,10 @@
                                 </p>
 
                             </div>
-
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                                <img src="./assets/images/menu-6.png" width="100" height="100" loading="lazy"
+                                    alt="Opu Fish" class="img-cover">
+                            </figure>
                         </div>
                     </li>
 
