@@ -1,12 +1,18 @@
 <?php
     session_start();
     require_once 'backend/db.php';
+    require_once 'backend/display_about_info.php';
     require_once 'backend/display_header_info.php';
     require_once 'backend/display_header_logo_and_favicon.php';
     require_once 'backend/display_hero_img_1.php';
+    require_once 'backend/display_hero_img_2.php';
+    require_once 'backend/display_hero_img_3.php';
     require_once 'backend/display_hero_info_1.php';
     require_once 'backend/display_hero_info_2.php';
     require_once 'backend/display_hero_info_3.php';
+    require_once 'backend/display_promo_imgs.php';
+    require_once 'backend/display_promo_info.php';
+    require_once 'backend/display_special_dish_info.php';
 
   if (isset($_SESSION["user_id"])) {
 
@@ -48,6 +54,12 @@ $user = $result->fetch_assoc();
   <!-- <link rel="shortcut icon" href="./assets/images/501-logo.png" type="image/svg+xml"> -->
   <!-- <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml"> -->
 
+  <!-- FONT AWESOME -->
+  <script
+      src="https://kit.fontawesome.com/7a6c6b42a6.js"
+      crossorigin="anonymous"
+    ></script>
+
   <!-- 
     - google font link
   -->
@@ -84,27 +96,35 @@ $user = $result->fetch_assoc();
   display: inline-block;
 }
 
+.fa-solid {
+  color: #fff;
+  background: transparent;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: #fff;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
 .dropdown-content a {
-  color: black;
+  color: #000;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {
+  background-color: #000;
+  color:#fff;
+}
 
 .dropdown:hover .dropdown-content {display: block;}
 
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+/* .dropdown:hover .dropbtn {background-color: #ffff;} */
   </style>
 
 </head>
