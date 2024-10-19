@@ -4,7 +4,7 @@ require "backend/db.php";
 
 if (!isset($_SESSION["user_id"])) {
 
-    header("Location: https://vergildkelley.com/");
+    header("Location: index");
 }
 ?>
 <!DOCTYPE html>
