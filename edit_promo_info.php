@@ -4,7 +4,7 @@ require "backend/db.php";
 
 if (!isset($_SESSION["user_id"])) {
 
-    header("Location: index.php");
+    header("Location: index");
 }
 ?>
 <!DOCTYPE html>
@@ -109,17 +109,17 @@ if (!isset($_SESSION["user_id"])) {
 
 <body>
     <section id='header-edits' class="stylist_info_container;"
-        style="display:flex;flex-direction:column;  justify-content:center; place-items:center; margin: 0 auto">
+        style="display:flex;flex-direction:column;  justify-content:center; place-items:center; margin: 5rem auto">
         <div>
             <a href="index.php">Back</a>
         </div>
         <div class='mobile-edit-photos' style='max-width:500px'>
             <div>
-                <h2>edit promotions titles 1</h2>
+                <h2>edit promotions titles</h2>
             </div>
             <br>
             <div
-                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; height: 500px; overflow-y:scroll; border:1px solid #333; padding: 10px">
+                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; overflow-y:scroll; border:1px solid #333; padding: 10px">
 
                 <?php
                     $promotions_info_query = "SELECT * FROM promotions";
@@ -155,7 +155,7 @@ if (!isset($_SESSION["user_id"])) {
                     
                         echo "
                         <div style='display:flex; justify-content:center; align-items:center; margin-bottom:20px'>
-                        <p><a class='btn btn-edit' href='backend/update_promotions_info.php?id=" . $promotions_info['id'] . "'>Edit</a></p>
+                        <p><a class='btn btn-edit' href='backend/update_promo_titles_info.php?id=" . $promotions_info['id'] . "'>Edit</a></p>
 
                         
                                     </div>
@@ -169,8 +169,15 @@ if (!isset($_SESSION["user_id"])) {
         <div class='form-container' style="display: flex; gap:4rem;">
             <div style="padding:10px; max-width:500px; min-width:300px">
                 <br>
-                <div>
+                <div id="promo-img-1">
                     <h2>edit promotions image 1</h2>
+                    <?php
+                        if(isset($_SESSION['empty_image_1'])) {
+                            echo "<div style='border:1px solid red; padding:10px'>
+                                    <p style='color:red;font-weight:bold; font-size:2rem';>" . $_SESSION['empty_image_1'] . "</p>";
+                            unset ($_SESSION['empty_image_1']);
+                        }
+                    ?>
                 </div>
                 <br>
                 <div
@@ -191,7 +198,7 @@ if (!isset($_SESSION["user_id"])) {
 
                         <p style="max-width:100vw">
                             <span
-                                style="display:flex; flex-direction:column; align-items:center; font-weight:bold">promotions
+                                style="display:flex; flex-direction:column; align-items:center; font-weight:bold">
                                 image 1:
                                 <img style='width:100%' src='assets/images/<?= $promotions_info['promo_img_1'] ?>'
                                     alt="<?= $promotions_info['promo_img_1'] ?>">
@@ -221,7 +228,7 @@ if (!isset($_SESSION["user_id"])) {
             </div>
             <br>
             <div
-                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; height: 500px; overflow-y:scroll; border:1px solid #333; padding: 10px">
+                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; overflow-y:scroll; border:1px solid #333; padding: 10px">
 
                 <?php
                     $promotions_info_query = "SELECT * FROM promotions";
@@ -271,8 +278,15 @@ if (!isset($_SESSION["user_id"])) {
         <div class='form-container' style="display: flex; gap:4rem;">
             <div style="padding:10px; max-width:500px; min-width:300px">
                 <br>
-                <div>
+                <div id="promo-img-2">
                     <h2>edit promotions image 2</h2>
+                    <?php
+                        if(isset($_SESSION['empty_image_2'])) {
+                            echo "<div style='border:1px solid red; padding:10px'>
+                                    <p style='color:red;font-weight:bold; font-size:2rem';>" . $_SESSION['empty_image_2'] . "</p>";
+                            unset ($_SESSION['empty_image_2']);
+                        }
+                    ?>
                 </div>
                 <br>
                 <div
@@ -293,7 +307,7 @@ if (!isset($_SESSION["user_id"])) {
 
                         <p style="max-width:100vw">
                             <span
-                                style="display:flex; flex-direction:column; align-items:center; font-weight:bold">favicon
+                                style="display:flex; flex-direction:column; align-items:center; font-weight:bold">
                                 image:
                                 <img style='width:100%' src='assets/images/<?= $promotions_info['promo_img_2'] ?>'
                                     alt="<?= $promotions_info['promo_img_2'] ?>">
@@ -304,7 +318,7 @@ if (!isset($_SESSION["user_id"])) {
                     
                         echo "
                         <div style='display:flex; justify-content:center; align-items:center; padding-bottom:20px'>
-                        <p><a class='btn btn-edit' href='backend/update_promotions?id=" . $promotions_info['id'] . "'>Edit</a></p>
+                        <p><a class='btn btn-edit' href='backend/update_promo_img_2?id=" . $promotions_info['id'] . "'>Edit</a></p>
                         <br>
                         </div>
                     </div>
@@ -323,7 +337,7 @@ if (!isset($_SESSION["user_id"])) {
             </div>
             <br>
             <div
-                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; height: 500px; overflow-y:scroll; border:1px solid #333; padding: 10px">
+                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; overflow-y:scroll; border:1px solid #333; padding: 10px">
 
                 <?php
                     $promotions_info_query = "SELECT * FROM promotions";
@@ -354,7 +368,7 @@ if (!isset($_SESSION["user_id"])) {
                     
                         echo "
                         <div style='display:flex; justify-content:center; align-items:center; margin-bottom:20px'>
-                        <p><a class='btn btn-edit' href='backend/update_promotions_info.php?id=" . $promotions_info['id'] . "'>Edit</a></p>
+                        <p><a class='btn btn-edit' href='backend/update_promo_info_2.php?id=" . $promotions_info['id'] . "'>Edit</a></p>
 
                         
                                     </div>
@@ -373,8 +387,15 @@ if (!isset($_SESSION["user_id"])) {
         <div class='form-container' style="display: flex; gap:4rem;">
             <div style="padding:10px; max-width:500px; min-width:300px">
                 <br>
-                <div>
+                <div id="promo-img-3">
                     <h2>edit promotions image 3</h2>
+                    <?php
+                    if(isset($_SESSION['empty_image_3'])) {
+                        echo "<div style='border:1px solid red; padding:10px'>
+                                <p style='color:red;font-weight:bold; font-size:2rem';>" . $_SESSION['empty_image_3'] . "</p>";
+                        unset ($_SESSION['empty_image_3']);
+                    }
+                ?>
                 </div>
                 <br>
                 <div
@@ -395,7 +416,7 @@ if (!isset($_SESSION["user_id"])) {
 
                         <p style="max-width:100vw">
                             <span
-                                style="display:flex; flex-direction:column; align-items:center; font-weight:bold">favicon
+                                style="display:flex; flex-direction:column; align-items:center; font-weight:bold">
                                 image:
                                 <img style='width:100%' src='assets/images/<?= $promotions_info['promo_img_3'] ?>'
                                     alt="<?= $promotions_info['promo_img_3'] ?>">
@@ -406,7 +427,7 @@ if (!isset($_SESSION["user_id"])) {
                     
                         echo "
                         <div style='display:flex; justify-content:center; align-items:center; padding-bottom:20px'>
-                        <p><a class='btn btn-edit' href='backend/update_promotions?id=" . $promotions_info['id'] . "'>Edit</a></p>
+                        <p><a class='btn btn-edit' href='backend/update_promo_img_3?id=" . $promotions_info['id'] . "'>Edit</a></p>
                         <br>
                         </div>
                     </div>
@@ -425,7 +446,7 @@ if (!isset($_SESSION["user_id"])) {
             </div>
             <br>
             <div
-                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; height: 500px; overflow-y:scroll; border:1px solid #333; padding: 10px">
+                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; overflow-y:scroll; border:1px solid #333; padding: 10px">
 
                 <?php
                     $promotions_info_query = "SELECT * FROM promotions";
@@ -449,14 +470,14 @@ if (!isset($_SESSION["user_id"])) {
                     <br>
                     <p>promotions img text 3:</p>
                     <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$promotions_info['promo_img_text_2']; ?></span>
+                        <span style='font-weight:bold'><?=$promotions_info['promo_img_text_3']; ?></span>
                     </p>
                     <br>
                     <?php
                     
                         echo "
                         <div style='display:flex; justify-content:center; align-items:center; margin-bottom:20px'>
-                        <p><a class='btn btn-edit' href='backend/update_promotions_info.php?id=" . $promotions_info['id'] . "'>Edit</a></p>
+                        <p><a class='btn btn-edit' href='backend/update_promo_info_3.php?id=" . $promotions_info['id'] . "'>Edit</a></p>
 
                         
                                     </div>
