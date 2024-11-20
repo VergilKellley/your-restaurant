@@ -16,7 +16,7 @@
         </a>
 
 
-        <nav class="navbar" data-navbar>
+        <nav class="navbar menu-bar" data-navbar>
 
             <button class="close-btn" aria-label="close menu" data-nav-toggler>
                 <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
@@ -100,6 +100,9 @@
                     </a>
                 </li>
                 <?php elseif (isset($user)): ?>
+
+
+
                 <li class="navbar-item" style="display:flex; gap:1rem">
                     <a href="logout" class="navbar-link hover-underline">
                         <div class="separator"></div>
@@ -107,7 +110,46 @@
                         <span class="span mobile-display" data-nav-toggler>Events</span>
                     </a>
                     <div class="dropdown">
-                        <!-- <button class="dropbtn">></button> -->
+                </li>
+
+                <li style="position:relative; width:60px; margin-top:10px">
+                    <a href="#">Edit <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li><a href="#">Menu <i class="fas fa-caret-right"></i></a></li>
+                            <li><a href="edit_header_info" target="_blank">Header</a></li>
+                            <li><a href="edit_hero_info" target="_blank">Hero</a></li>
+
+
+                            <div class="dropdown-menu-1">
+                                <ul>
+                                    <li><a href="add_appetizer_menu_item" target="_blank">Add Appetizers</a></li>
+                                    <li><a href="edit_appetizer_menu_item_info" target="_blank">Edit/Delete
+                                            Appetizers</a>
+                                    </li>
+                                    <li><a href="add_menu_item" target="_blank">Add Entre</a></li>
+                                    <li><a href="edit_menu_item_info" target="_blank">Edit/Delete Entres</a></li>
+                                    <li><a href="add_dessert_menu_item" target="_blank">Add Desserts</a></li>
+                                    <li><a href="edit_dessert_menu_item_info" target="_blank">Edit/Delete Desserts</a>
+                                    </li>
+                                    <li><a href="add_drinks_menu_item" target="_blank">Add Drinks</a></li>
+                                    <li><a href="edit_drinks_menu_item_info" target="_blank">Edit/Delete Drinks</a></li>
+                                </ul>
+                            </div>
+                            <li><a href="edit_promo_info" target="_blank">Promotions</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+
+                <!-- <li class="navbar-item" style="display:flex; gap:1rem">
+                    <a href="logout" class="navbar-link hover-underline">
+                        <div class="separator"></div>
+                        <span class="span desk-top-display">Logout</span>
+                        <span class="span mobile-display" data-nav-toggler>Events</span>
+                    </a>
+                    <div class="dropdown">
+                        
                         <i class="dropbtn fa-solid fa-caret-down"
                             style="display:flex; gap:10px; background:#000;"><span> Edit Site</span></i>
                         <div class="dropdown-content">
@@ -116,10 +158,24 @@
                             <a href="edit_promo_info" target="_blank">Promotions</a>
                             <a href="edit_about_info" target="_blank">About</a>
                             <a href="edit_special_dish_info" target="_blank">Special Dish</a>
-                            <a href="edit_menu_info" target="_blank">Menu</a>
+                            <a href="add_appetizer_menu_item" target="_blank">Menu <i class="fa fa-caret-down"></i></a>
+                            <a href="add_appetizer_menu_item" target="_blank">Add Appetizers <i class="fa fa-caret-down"></i></a>
+                            <a href="edit_appetizer_menu_item_info" target="_blank">Edit Appetizers</a>
+                            <a href="add_menu_item" target="_blank">Add Entre</a>
+                            <a href="edit_menu_item_info" target="_blank">Edit Entres</a>
+                            <a href="add_dessert_menu_item" target="_blank">Add Desserts</a>
+                            <a href="edit_dessert_menu_item_info" target="_blank">Edit Desserts</a>
+                            <a href="add_drinks_menu_item" target="_blank">Add Drinks</a>
+                            <a href="edit_drinks_menu_item_info" target="_blank">Edit Drinks</a>
+                            
+                            <a href="edit_reviews_info" target="_blank">Reviews</a>
+                            <a href="edit_reservations_info" target="_blank">Reservations</a>
+                            <a href="edit_our_strengths_info" target="_blank">Strengths</a>
+                            <a href="edit_upcoming_events_info" target="_blank">Events</a>
+                            <a href="edit_footer_info" target="_blank">Footer</a>
                         </div>
                     </div>
-                </li>
+                </li> -->
                 <?php endif; ?>
             </ul>
 
@@ -151,11 +207,56 @@
 
         </nav>
 
-        <a href="<?= $hero_top_btn_link_1; ?>" class="btn btn-secondary hide-text" target="_blank">
+
+        <!-- SHOPPING CART START-->
+
+
+            <div class="cart-box">
+                <div class="cart-icon">
+                    <i class="fas fa-cart-arrow-down fa-2x"></i>
+                </div>
+                <div class="whole-cart-window hide">
+                    <form action="checkout.php" method="post" enctype="multipart/form-data">
+                    <h2 style="color:black">Your Order</h2>
+                    <div class="cart-wrapper">
+                    </div>
+                    <div class="subtotal">Subtotal: 0.00</div>
+                    <!-- <div class="checkout"></div> -->
+                    <button class="checkout" type="submit" name="checkout-btn">Checkouts</button>
+                    
+                    <!-- <div class="view-cart">View Cart</div> -->
+                    </form>
+                </div>
+            </div>
+
+            
+
+
+
+
+        <!-- <div class="cart-box">
+            <div class="cart-icon">
+                <i class="fas fa-cart-arrow-down fa-2x"></i>
+            </div>
+            <div class="whole-cart-window hide">
+                <h2 style="color:black">Your Order</h2>
+                <div class="cart-wrapper">
+
+                </div>
+                <div class="subtotal">Subtotal: 0.00</div>
+                <div class="checkout">Checkout</div>
+                <div class="view-cart">View Cart</div>
+            </div>
+        </div> -->
+
+
+        <!-- SHOPPING CART END-->
+
+        <!-- <a href="<?= $hero_top_btn_link_1; ?>" class="btn btn-secondary hide-text" target="_blank">
             <span class="text text-1"><?= $hero_top_btn_text_1; ?></span>
 
             <span class="text text-2" aria-hidden="true"><?= $hero_top_btn_text_1; ?></span>
-        </a>
+        </a> -->
 
         <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
             <span class="line line-1"></span>
@@ -541,218 +642,169 @@
 
 
         <!-- 
-        - #MENU
+        - #MENU START
       -->
 
+
+        <!-- APPETIZERS MENU -->
+
+        <div style="display:flex; justify-content:center; margin-top: 5rem">
+            <h2 style="font-size:50px">Appetizers</h2>
+        </div>
         <section class="section menu" aria-label="menu-label" id="menu">
-            <div class="container">
-
-                <p class="section-subtitle text-center label-2">Special Selection</p>
-
-                <h2 class="headline-1 section-title text-center">Delicious Menu</h2>
+            <div class="container" style="height:300px; overflow-y:scroll; border:1px solid #fff; padding-top:20px">
+                <?php
+                    $menu_info_query = "SELECT * FROM menu_item WHERE appetizer_menu_item_num != 0 ";
+                    $menu_info_result = mysqli_query($conn, $menu_info_query);
+                    ?>
 
                 <ul class="grid-list">
+                    <?php while($row = mysqli_fetch_assoc($menu_info_result)): ?>
+                    <div class="card-wrapper">
+                        <div class="menu-items" id="menus" data-id="<?= $row['id'] ?>" class="card-item">
+                            <span><?= $row['appetizer_menu_item_num'] ?></span>
+                            <img style="display:inline; width:100px; height:100px"
+                                src="./assets/images/<?= $row['appetizer_menu_item_img'];?>" loading="lazy"
+                                alt="Lasagne" class="img-cover">
+                            <div class="details">
+                                <a href="#" class="card-title"><?= $row['appetizer_menu_item_name'];?></a>
+                                <p>
 
-                    <li>
-                        <div class="menu-card hover:card">
+                                    <span class="badge label-1"><?= $row['appetizer_menu_item_text'];?></span>
+                                    <span class="span title-2"> <?= $row['appetizer_menu_item_price'];?></span>
 
-
-
-                            <div>
-
-                                <div class="title-wrapper">
-                                    <div style="display:flex; gap:7px">
-                                        <span>1. </span>
-                                        <h3 class="title-3">
-                                            <a href="#" class="card-title">Greek Salad</a>
-                                        </h3>
-                                    </div>
-
-
-                                    <span class="badge label-1">Seasonal</span>
-
-                                    <span class="span title-2">$25.50</span>
-                                </div>
-
-                                <p class="card-text label-1">
-                                    Tomatoes, green bell pepper, sliced cucumber onion, olives, and feta cheese.
+                                    <span class="add-to-cart-btn">Add To Cart</span>
                                 </p>
-
                             </div>
-                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                                <img src="./assets/images/menu-1.png" width="100" height="100" loading="lazy"
-                                    alt="Greek Salad" class="img-cover">
-                            </figure>
                         </div>
-                    </li>
+                    </div>
+                    <?php endwhile; ?>
+        </section>
 
-                    <li>
-                        <div class="menu-card hover:card">
+        <!-- ENTRES MENU -->
+        <div style="display:flex; justify-content:center; margin-top: 5rem">
+            <h2 style="font-size:50px">Entres</h2>
+        </div>
+        <section class="section menu" aria-label="menu-label" id="menu">
+            <div class="container" style="height:300px; overflow-y:scroll; border:1px solid #fff; padding-top:20px">
+                <?php
+                    $menu_info_query = "SELECT * FROM menu_item WHERE entre_menu_item_num != 0";
+                    $menu_info_result = mysqli_query($conn, $menu_info_query);
+                    ?>
 
-                            <div>
-                                <div class="title-wrapper">
-                                    <div style="display:flex; gap:7px">
-                                        <span>2. </span>
-                                        <h3 class="title-3">
-                                            <a href="#" class="card-title">Lasagne</a>
-                                        </h3>
-                                    </div>
-                                    <span class="span title-2">$40.00</span>
-                                </div>
+                <ul class="grid-list">
+                    <?php while($row = mysqli_fetch_assoc($menu_info_result)): ?>
+                    <div class="card-wrapper">
+                        <div class="menu-items" id="menus" data-id="<?= $row['id'] ?>" class="card-item">
+                            <span><?= $row['entre_menu_item_num'] ?></span>
+                            <img style="display:inline; width:100px; height:100px"
+                                src="./assets/images/<?= $row['entre_menu_item_img'];?>" loading="lazy" alt="Lasagne"
+                                class="img-cover">
+                            <div class="details">
+                                <a href="#" class="card-title"><?= $row['entre_menu_item_name'];?></a>
+                                <p>
+                                    <span class="badge label-1"><?= $row['entre_menu_item_text'];?></span>
+                                    <span class="span title-2"> <?= $row['entre_menu_item_price'];?></span>
 
-                                <p class="card-text label-1">
-                                    Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices
+                                    <span class="add-to-cart-btn">Add To Cart</span>
                                 </p>
-
                             </div>
-                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                                <img src="./assets/images/menu-2.png" width="100" height="100" loading="lazy"
-                                    alt="Lasagne" class="img-cover">
-                            </figure>
                         </div>
-                    </li>
-
-                    <li>
-                        <div class="menu-card hover:card">
-                            <div>
-                                <div class="title-wrapper">
-                                    <div style="display:flex; gap:7px">
-                                        <span>3. </span>
-                                        <h3 class="title-3">
-                                            <a href="#" class="card-title">Butternut Pumpkin</a>
-                                        </h3>
-                                    </div>
-                                    <span class="span title-2">$10.00</span>
-                                </div>
-
-                                <p class="card-text label-1">
-                                    Typesetting industry lorem Lorem Ipsum is simply dummy text of the priand.
-                                </p>
-
-                            </div>
-                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                                <img src="./assets/images/menu-3.png" width="100" height="100" loading="lazy"
-                                    alt="Butternut Pumpkin" class="img-cover">
-                            </figure>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="menu-card hover:card">
-                            <div>
-                                <div class="title-wrapper">
-                                    <div style="display:flex; gap:7px">
-                                        <span>4. </span>
-                                        <h3 class="title-3">
-                                            <a href="#" class="card-title">Tokusen Wagyu</a>
-                                        </h3>
-                                    </div>
-                                    <span class="badge label-1">New</span>
-
-                                    <span class="span title-2">$39.00</span>
-                                </div>
-
-                                <p class="card-text label-1">
-                                    Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices.
-                                </p>
-
-                            </div>
-                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                                <img src="./assets/images/menu-4.png" width="100" height="100" loading="lazy"
-                                    alt="Tokusen Wagyu" class="img-cover">
-                            </figure>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="menu-card hover:card">
-                            <div>
-                                <div class="title-wrapper">
-                                    <div style="display:flex; gap:7px">
-                                        <span>5. </span>
-                                        <h3 class="title-3">
-                                            <a href="#" class="card-title">Olivas Rellenas</a>
-                                        </h3>
-                                    </div>
-                                    <span class="span title-2">$25.00</span>
-                                </div>
-
-                                <p class="card-text label-1">
-                                    Avocados with crab meat, red onion, crab salad stuffed red bell pepper and green
-                                    bell pepper.
-                                </p>
-
-                            </div>
-                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                                <img src="./assets/images/menu-5.png" width="100" height="100" loading="lazy"
-                                    alt="Olivas Rellenas" class="img-cover">
-                            </figure>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="menu-card hover:card">
-                            <div>
-                                <div class="title-wrapper">
-                                    <div style="display:flex; gap:7px">
-                                        <span>6. </span>
-                                        <h3 class="title-3">
-                                            <a href="#" class="card-title">Opu Fish</a>
-                                        </h3>
-                                    </div>
-                                    <span class="span title-2">$49.00</span>
-                                </div>
-
-                                <p class="card-text label-1">
-                                    Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices
-                                </p>
-
-                            </div>
-                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                                <img src="./assets/images/menu-6.png" width="100" height="100" loading="lazy"
-                                    alt="Opu Fish" class="img-cover">
-                            </figure>
-                        </div>
-                    </li>
-
-                </ul>
-
-                <p class="menu-text text-center">
-                    During winter daily from <span class="span">7:00 pm</span> to <span class="span">9:00 pm</span>
-                </p>
-
-                <a href="#" class="btn btn-primary">
-                    <span class="text text-1">View All Menu</span>
-
-                    <span class="text text-2" aria-hidden="true">View All Menu</span>
-                </a>
-
-                <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-                    class="shape shape-2 move-anim">
-                <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-                    class="shape shape-3 move-anim">
-
-            </div>
+                    </div>
+                    <?php endwhile; ?>
         </section>
 
 
+        <!-- DESSERTS MENU -->
+        <div style="display:flex; justify-content:center; margin-top: 5rem">
+            <h2 style="font-size:50px">Desserts</h2>
+        </div>
+        <section class="section menu" aria-label="menu-label" id="menu">
+            <div class="container" style="height:300px; overflow-y:scroll; border:1px solid #fff; padding-top:20px">
+                <?php
+                    $menu_info_query = "SELECT * FROM menu_item WHERE dessert_menu_item_num != 0";
+                    $menu_info_result = mysqli_query($conn, $menu_info_query);
+                    ?>
+
+                <ul class="grid-list">
+                    <?php while($row = mysqli_fetch_assoc($menu_info_result)): ?>
+                    <div class="card-wrapper">
+                        <div class="menu-items" id="menus" data-id="<?= $row['id'] ?>" class="card-item">
+                            <span><?= $row['dessert_menu_item_num'] ?></span>
+                            <img style="display:inline; width:100px; height:100px"
+                                src="./assets/images/<?= $row['dessert_menu_item_img'];?>" loading="lazy" alt="Lasagne"
+                                class="img-cover">
+                            <div class="details">
+                                <a href="#" class="card-title"><?= $row['dessert_menu_item_name'];?></a>
+                                <p>
+
+                                    <span class="badge label-1"><?= $row['dessert_menu_item_text'];?></span>
+                                    <span class="span title-2"> <?= $row['dessert_menu_item_price'];?></span>
+
+                                    <span class="add-to-cart-btn">Add To Cart</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endwhile; ?>
+        </section>
 
 
+        <!-- DRINKS MENU -->
+        <div style="display:flex; justify-content:center; margin-top: 5rem">
+            <h2 style="font-size:50px">Drinks</h2>
+        </div>
+        <section class="section menu" aria-label="menu-label" id="menu">
+            <div class="container" style="height:300px; overflow-y:scroll; border:1px solid #fff; padding-top:20px">
+                <?php
+                    $menu_info_query = "SELECT * FROM menu_item WHERE drinks_menu_item_num != 0";
+                    $menu_info_result = mysqli_query($conn, $menu_info_query);
+                    ?>
+
+                <ul class="grid-list">
+                    <?php while($row = mysqli_fetch_assoc($menu_info_result)): ?>
+                    <div class="card-wrapper">
+                        <div class="menu-items" id="menus" data-id="<?= $row['id'] ?>" class="card-item">
+                            <span><?= $row['drinks_menu_item_num'] ?></span>
+                            <img style="display:inline; width:100px; height:100px"
+                                src="./assets/images/<?= $row['drinks_menu_item_img'];?>" loading="lazy" alt="Lasagne"
+                                class="img-cover">
+                            <div class="details">
+                                <a href="#" class="card-title"><?= $row['drinks_menu_item_name'];?></a>
+                                <p>
+
+                                    <span class="badge label-1"><?= $row['drinks_menu_item_text'];?></span>
+                                    <span class="span title-2"> <?= $row['drinks_menu_item_price'];?></span>
+
+                                    <span class="add-to-cart-btn">Add To Cart</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endwhile; ?>
+        </section>
+
+        <!-- 
+        - #MENU END
+      -->
 
         <!-- 
         - #TESTIMONIALS
       -->
 
         <section id="reviews" class="section testi text-center has-bg-image"
-            style="background-image: url('./assets/images/testimonial-bg.jpg')" aria-label="testimonials">
+            style="background-image: url('assets/images/<?= $reviews_bkgd_img; ?>')" aria-label="testimonials">
             <div class="container">
 
                 <div class="quote">”</div>
 
                 <p class="headline-2 testi-text">
+                    <?= $review; ?>
+                </p>
+                <!-- <p class="headline-2 testi-text">
                     I wanted to thank you for inviting me down for that amazing dinner the other night. The food was
                     extraordinary.
-                </p>
+                </p> -->
 
                 <div class="wrapper">
                     <div class="separator"></div>
@@ -761,10 +813,10 @@
                 </div>
 
                 <div class="profile">
-                    <img src="./assets/images/testi-avatar.jpg" width="100" height="100" loading="lazy"
-                        alt="Sam Jhonson" class="img">
+                    <img src="./assets/images/<?= $reviews_small_img; ?>" width="100" height="100" loading="lazy"
+                        alt="<?= $reviews_small_img_desc; ?>" class="img">
 
-                    <p class="label-2 profile-name">Sam Jhonson</p>
+                    <p class="label-2 profile-name"><?= $reviews_small_img_text; ?></p>
                 </div>
 
             </div>
@@ -788,12 +840,15 @@
 
                     <form action="#" class="form-left">
 
-                        <h2 class="headline-1 text-center">Online Reservation</h2>
+                        <h2 class="headline-1 text-center"><?= $reservation_title; ?></h2>
 
                         <p class="form-text text-center">
-                            Reservation request <a href="tel:+3125555555" class="link">(312) 555-5555</a>
-                            or fill out the reservation form
+                            <?= $reservation_text; ?>
                         </p>
+                        <!-- <p class="form-text text-center">
+                            Reservation request <a href="tel:+<?= $phone; ?>" class="link"><?= $phone; ?></a>
+                            or fill out the reservation form
+                        </p> -->
 
                         <div class="input-wrapper">
                             <input type="text" name="name" placeholder="Your Name" autocomplete="off"
@@ -876,14 +931,14 @@
 
                         <p class="contact-label">Phone</p>
 
-                        <a href="tel:+3125555555" class="body-1 contact-number hover-underline">(312) 555-5555</a>
+                        <a href="tel:+3125555555" class="body-1 contact-number hover-underline"><?= $phone; ?></a>
 
                         <div class="separator"></div>
 
                         <p class="contact-label">Location</p>
 
                         <address class="body-4">
-                            1234 Broadway Avenue Chicago, IL 60640
+                            <?= $street_address; ?>
                         </address>
 
                         <p class="contact-label">Lunch Time</p>
@@ -918,9 +973,9 @@
         <section class="section features text-center" aria-label="features">
             <div class="container">
 
-                <p class="section-subtitle label-2">Why Choose Us</p>
+                <p class="section-subtitle label-2"><?= $our_strengths_small_top_title; ?></p>
 
-                <h2 class="headline-1 section-title">Our Strength</h2>
+                <h2 class="headline-1 section-title"><?= $our_strengths_main_title; ?></h2>
 
                 <ul class="grid-list">
 
@@ -928,13 +983,13 @@
                         <div class="feature-card">
 
                             <div class="card-icon">
-                                <img src="./assets/images/features-icon-1.png" width="100" height="80" loading="lazy"
-                                    alt="icon">
+                                <img src="./assets/images/<?= $our_strengths_img_1; ?>" width="100" height="80"
+                                    loading="lazy" alt="<?= $our_strengths_img_desc_1; ?>">
                             </div>
 
-                            <h3 class="title-2 card-title">Amazing Food</h3>
+                            <h3 class="title-2 card-title"><?= $our_strengths_img_title_1; ?></h3>
 
-                            <p class="label-1 card-text">Lorem Ipsum is simply dummy printing and typesetting.</p>
+                            <p class="label-1 card-text"><?= $our_strengths_img_text_1; ?></p>
 
                         </div>
                     </li>
@@ -943,13 +998,13 @@
                         <div class="feature-card">
 
                             <div class="card-icon">
-                                <img src="./assets/images/features-icon-2.png" width="100" height="80" loading="lazy"
-                                    alt="icon">
+                                <img src="./assets/images/<?= $our_strengths_img_2; ?>" width="100" height="80"
+                                    loading="lazy" alt="<?= $our_strengths_img_desc_2; ?>">
                             </div>
 
-                            <h3 class="title-2 card-title">Fresh Environment</h3>
+                            <h3 class="title-2 card-title"><?= $our_strengths_img_title_2; ?></h3>
 
-                            <p class="label-1 card-text">Lorem Ipsum is simply dummy printing and typesetting.</p>
+                            <p class="label-1 card-text"><?= $our_strengths_img_text_2; ?></p>
 
                         </div>
                     </li>
@@ -958,13 +1013,13 @@
                         <div class="feature-card">
 
                             <div class="card-icon">
-                                <img src="./assets/images/features-icon-3.png" width="100" height="80" loading="lazy"
-                                    alt="icon">
+                                <img src="./assets/images/<?= $our_strengths_img_3; ?>" width="100" height="80"
+                                    loading="lazy" alt="<?= $our_strengths_img_desc_3; ?>">
                             </div>
 
-                            <h3 class="title-2 card-title">Skilled Chefs</h3>
+                            <h3 class="title-2 card-title"><?= $our_strengths_img_title_3; ?></h3>
 
-                            <p class="label-1 card-text">Lorem Ipsum is simply dummy printing and typesetting.</p>
+                            <p class="label-1 card-text"><?= $our_strengths_img_text_3; ?></p>
 
                         </div>
                     </li>
@@ -973,24 +1028,24 @@
                         <div class="feature-card">
 
                             <div class="card-icon">
-                                <img src="./assets/images/features-icon-4.png" width="100" height="80" loading="lazy"
-                                    alt="icon">
+                                <img src="./assets/images/<?= $our_strengths_img_4; ?>" width="100" height="80"
+                                    loading="lazy" alt="<?= $our_strengths_img_desc_4; ?>">
                             </div>
 
-                            <h3 class="title-2 card-title">Event & Party</h3>
+                            <h3 class="title-2 card-title"><?= $our_strengths_img_title_4; ?></h3>
 
-                            <p class="label-1 card-text">Lorem Ipsum is simply dummy printing and typesetting.</p>
+                            <p class="label-1 card-text"><?= $our_strengths_img_text_4; ?></p>
 
                         </div>
                     </li>
 
                 </ul>
 
-                <img src="./assets/images/shape-7.png" width="208" height="178" loading="lazy" alt="shape"
-                    class="shape shape-1">
+                <img src="./assets/images/<?= $our_strengths_right_img; ?>" width="208" height="178" loading="lazy"
+                    alt="<?= $our_strengths_right_img_desc; ?>" class="shape shape-1">
 
-                <img src="./assets/images/shape-8.png" width="120" height="115" loading="lazy" alt="shape"
-                    class="shape shape-2">
+                <img src="./assets/images/<?= $our_strengths_left_img; ?>" width="120" height="115" loading="lazy"
+                    alt="<?= $our_strengths_left_img_desc; ?>" class="shape shape-2">
 
             </div>
         </section>
@@ -1006,9 +1061,9 @@
         <section id="events" class="section event bg-black-10" aria-label="event">
             <div class="container">
 
-                <p class="section-subtitle label-2 text-center">Recent Updates</p>
+                <p class="section-subtitle label-2 text-center"><?= $upcoming_events_small_top_title; ?></p>
 
-                <h2 class="section-title headline-1 text-center">Upcoming Events</h2>
+                <h2 class="section-title headline-1 text-center"><?= $upcoming_events_main_title; ?></h2>
 
                 <ul class="grid-list">
 
@@ -1016,17 +1071,17 @@
                         <div class="event-card has-before hover:shine">
 
                             <div class="card-banner img-holder" style="--width: 350; --height: 450;">
-                                <img src="./assets/images/event-1.jpg" width="350" height="450" loading="lazy"
-                                    alt="Flavour so good you’ll try to eat with your eyes." class="img-cover">
+                                <img src="./assets/images/<?= $upcoming_events_img_1; ?>" width="350" height="450"
+                                    loading="lazy" alt="<?= $upcoming_events_img_desc_1; ?>" class="img-cover">
 
                                 <time class="publish-date label-2" datetime="09/15/2024">11/09/2024</time>
                             </div>
 
                             <div class="card-content">
-                                <p class="card-subtitle label-2 text-center">Food, Flavour</p>
+                                <p class="card-subtitle label-2 text-center"><?= $upcoming_events_img_title_1; ?></p>
 
                                 <h3 class="card-title title-2 text-center">
-                                    Flavour so good you’ll try to eat with your eyes.
+                                    <?= $upcoming_events_img_text_1; ?>.
                                 </h3>
                             </div>
 
@@ -1037,17 +1092,17 @@
                         <div class="event-card has-before hover:shine">
 
                             <div class="card-banner img-holder" style="--width: 350; --height: 450;">
-                                <img src="./assets/images/event-2.jpg" width="350" height="450" loading="lazy"
-                                    alt="Flavour so good you’ll try to eat with your eyes." class="img-cover">
+                                <img src="./assets/images/<?= $upcoming_events_img_2; ?>" width="350" height="450"
+                                    loading="lazy" alt="<?= $upcoming_events_img_desc_2; ?>" class="img-cover">
 
                                 <time class="publish-date label-2" datetime="11/12/2024">09/25/2024</time>
                             </div>
 
                             <div class="card-content">
-                                <p class="card-subtitle label-2 text-center">Healthy Food</p>
+                                <p class="card-subtitle label-2 text-center"><?= $upcoming_events_img_title_2; ?></p>
 
                                 <h3 class="card-title title-2 text-center">
-                                    Flavour so good you’ll try to eat with your eyes.
+                                    <?= $upcoming_events_img_text_2; ?>
                                 </h3>
                             </div>
 
@@ -1058,20 +1113,19 @@
                         <div class="event-card has-before hover:shine">
 
                             <div class="card-banner img-holder" style="--width: 350; --height: 450;">
-                                <img src="./assets/images/event-3.jpg" width="350" height="450" loading="lazy"
-                                    alt="Flavour so good you’ll try to eat with your eyes." class="img-cover">
+                                <img src="./assets/images/<?= $upcoming_events_img_3; ?>" width="350" height="450"
+                                    loading="lazy" alt="<?= $upcoming_events_img_desc_3; ?>" class="img-cover">
 
                                 <time class="publish-date label-2" datetime="12/01/2024">12/01/2024</time>
                             </div>
 
                             <div class="card-content">
-                                <p class="card-subtitle label-2 text-center">Recipie</p>
+                                <p class="card-subtitle label-2 text-center"><?= $upcoming_events_img_title_3; ?></p>
 
                                 <h3 class="card-title title-2 text-center">
-                                    Flavour so good you’ll try to eat with your eyes.
+                                    <?= $upcoming_events_img_text_3; ?>
                                 </h3>
                             </div>
-
                         </div>
                     </li>
 
