@@ -13,17 +13,16 @@
         <div class="footer-brand has-before has-after">
 
           <a href="#" class="logo">
-            Your Logo
-            <!-- <img src="./assets/images/logo.svg" width="160" height="50" loading="lazy" alt="grilli home"> -->
+            <img src="./assets/images/<?= $header_logo_and_favicon; ?>" width="160" height="50" loading="lazy" alt="logo">
           </a>
 
           <address class="body-4">
-            1234 Broadway Avenue Chicago, IL 60640
+            <?= $street_address; ?>
           </address>
 
-          <a href="mailto:booking@grilli.com" class="body-4 contact-link">info@yourrestaurant.com</a>
+          <a href="mailto:booking@grilli.com" class="body-4 contact-link"><?= $email; ?></a>
 
-          <a href="tel:+3125555555" class="body-4 contact-link">Reservations : (312) 555-5555</a>
+          <a href="tel:+<?= $phone; ?>" class="body-4 contact-link">Phone : <?= $phone; ?></a>
 
           <p class="body-4">
             Daily : 8:00 am - 8:00 pm
@@ -35,11 +34,15 @@
             <div class="separator"></div>
           </div>
 
-          <p class="title-1">Get News & Offers</p>
+          <p class="title-1"><?= $footer_main_title; ?></p>
+          <!-- <p class="title-1">Get News & Offers</p> -->
 
           <p class="label-1">
-            Subscribe us & Get <span class="span">25% Off.</span>
+            <span class="span"><?= $footer_sub_title; ?></span>
           </p>
+          <!-- <p class="label-1">
+            Subscribe us & Get <span class="span">25% Off.</span>
+          </p> -->
 
           <form action="" class="input-wrapper">
             <div class="icon-wrapper">
@@ -92,36 +95,34 @@
         <ul class="footer-list">
 
           <li>
-            <a href="#" class="label-2 footer-link hover-underline">Facebook</a>
+            <a href="<?= $footer_facebook; ?>" class="label-2 footer-link hover-underline" target='_blank'>Facebook</a>
           </li>
 
           <li>
-            <a href="#" class="label-2 footer-link hover-underline">Instagram</a>
+            <a href="<?= $footer_instagram; ?>" class="label-2 footer-link hover-underline" target='_blank'>Instagram</a>
           </li>
 
           <li>
-            <a href="#" class="label-2 footer-link hover-underline">Twitter</a>
+            <a href="<?= $footer_youtube; ?>" class="label-2 footer-link hover-underline" target='_blank'>YouTube</a>
           </li>
 
           <li>
-            <a href="#" class="label-2 footer-link hover-underline">Youtube</a>
+            <a href="<?= $footer_google_map; ?>" class="label-2 footer-link hover-underline" target='_blank'>Google Map</a>
           </li>
 
-          <li>
+          <!-- <li>
             <a href="#" class="label-2 footer-link hover-underline">Google Map</a>
-          </li>
+          </li> -->
 
         </ul>
 
       </div>
 
       <div class="footer-bottom">
-
         <p class="copyright">
-           Copyright &copy; 2024 your restaurant | Website designed and powered by <a href="https://webqwick.com/"
+           Copyright &copy; <?php echo date("Y"); ?> your restaurant | Website designed and powered by <a href="https://webqwick.com/"
             target="_blank" class="link">webQwick. </a> All other trademarks, service marks and trade names referenced in this material are the property of their respective owner.
         </p>
-
       </div>
 
     </div>
