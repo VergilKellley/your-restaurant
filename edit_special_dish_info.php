@@ -127,7 +127,7 @@ if (!isset($_SESSION["user_id"])) {
                     ?>
                 <?php while ($special_dish_info = mysqli_fetch_assoc($special_dish_info_result)) : ?>
                 <div class='nth-child-bkgd-color'
-                    style='border:1px solid #333; padding:10px; line-height: 1.5; max-width:100%'>
+                    style=' padding:10px; line-height: 1.5; max-width:100%'>
                     <input type="hidden" name="id" value="<?= $special_dish_info['id'] ?>">
                     <?php
                             GLOBAL $special_dish_id;
@@ -176,7 +176,7 @@ if (!isset($_SESSION["user_id"])) {
         </div>
 
         <div id="special-dish-img" class='form-container' style="display: flex; gap:4rem;">
-            <div style="padding:10px; max-width:500px; min-width:300px">
+            <div style="max-width:500px; min-width:300px">
                 <br>
                 <div>
                     <h2>image </h2>
@@ -186,11 +186,11 @@ if (!isset($_SESSION["user_id"])) {
                                     <p style='color:red;font-weight:bold; font-size:2rem';>" . $_SESSION['empty_image'] . "</p>";
                             unset ($_SESSION['empty_image']);
                         }
-                        ?>
+                    ?>
                 </div>
                 <br>
                 <div
-                    style="display:flex; flex-direction:column; gap:1rem; padding:10px;max-width:500px; min-width:300px">
+                    style="display:flex; flex-direction:column; gap:1rem;max-width:500px; min-width:300px">
 
                     <?php
                     $special_dish_info_query = "SELECT * FROM special_dish";
@@ -248,7 +248,7 @@ if (!isset($_SESSION["user_id"])) {
                 </div>
                 <br>
                 <div
-                    style="display:flex; flex-direction:column; gap:1rem; padding:10px;max-width:500px; min-width:300px">
+                    style="display:flex; flex-direction:column; gap:1rem; max-width:500px; min-width:300px">
 
                     <?php
                     $special_dish_info_query = "SELECT * FROM special_dish";
