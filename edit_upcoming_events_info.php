@@ -123,7 +123,7 @@ if (!isset($_SESSION["user_id"])) {
             <br>
             <h2>event titles</h2>
             <div
-                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; overflow-y:scroll; border:1px solid #333; padding: 10px">
+                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; border:1px solid #333; padding: 10px">
 
                 <?php
                     $upcoming_events_info_query = "SELECT * FROM upcoming_events";
@@ -131,7 +131,7 @@ if (!isset($_SESSION["user_id"])) {
                     ?>
                 <?php while ($upcoming_events_info = mysqli_fetch_assoc($upcoming_events_info_result)) : ?>
                 <div class='nth-child-bkgd-color'
-                    style='border:1px solid #333; padding:10px; line-height: 1.5; max-width:100%'>
+                    style=' padding:10px; line-height: 1.5; max-width:100%'>
                     <input type="hidden" name="id" value="<?= $upcoming_events_info['id'] ?>">
                     <?php
                             GLOBAL $upcoming_events_id;
@@ -228,7 +228,7 @@ if (!isset($_SESSION["user_id"])) {
             </div>
             <br>
             <div
-                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; overflow-y:scroll; border:1px solid #333; padding: 10px">
+                style=" display: flex; flex-direction:column; align-items:center; gap:1rem;  border:1px solid #333; padding: 10px">
 
                 <?php
                     $upcoming_events_info_query = "SELECT * FROM upcoming_events";
@@ -236,7 +236,7 @@ if (!isset($_SESSION["user_id"])) {
                     ?>
                 <?php while ($upcoming_events_info = mysqli_fetch_assoc($upcoming_events_info_result)) : ?>
                 <div class='nth-child-bkgd-color'
-                    style='border:1px solid #333; padding:10px; line-height: 1.5; max-width:100%'>
+                    style='padding:10px; line-height: 1.5; max-width:100%'>
                     <input type="hidden" name="id" value="<?= $upcoming_events_info['id'] ?>">
                     <?php
                             GLOBAL $upcoming_events_id;
@@ -335,7 +335,7 @@ if (!isset($_SESSION["user_id"])) {
             </div>
             <br>
             <div
-                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; overflow-y:scroll; border:1px solid #333; padding: 10px">
+                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; border:1px solid #333; padding: 10px">
 
                 <?php
                     $upcoming_events_info_query = "SELECT * FROM upcoming_events";
@@ -343,7 +343,7 @@ if (!isset($_SESSION["user_id"])) {
                     ?>
                 <?php while ($upcoming_events_info = mysqli_fetch_assoc($upcoming_events_info_result)) : ?>
                 <div class='nth-child-bkgd-color'
-                    style='border:1px solid #333; padding:10px; line-height: 1.5; max-width:100%'>
+                    style='padding:10px; line-height: 1.5; max-width:100%'>
                     <input type="hidden" name="id" value="<?= $upcoming_events_info['id'] ?>">
                     <?php
                             GLOBAL $upcoming_events_id;
@@ -443,7 +443,7 @@ if (!isset($_SESSION["user_id"])) {
             </div>
             <br>
             <div
-                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; overflow-y:scroll; border:1px solid #333; padding: 10px">
+                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; border:1px solid #333; padding: 10px">
 
                 <?php
                     $upcoming_events_info_query = "SELECT * FROM upcoming_events";
@@ -451,7 +451,7 @@ if (!isset($_SESSION["user_id"])) {
                     ?>
                 <?php while ($upcoming_events_info = mysqli_fetch_assoc($upcoming_events_info_result)) : ?>
                 <div class='nth-child-bkgd-color'
-                    style='border:1px solid #333; padding:10px; line-height: 1.5; max-width:100%'>
+                    style='padding:10px; line-height: 1.5; max-width:100%'>
                     <input type="hidden" name="id" value="<?= $upcoming_events_info['id'] ?>">
                     <?php
                             GLOBAL $upcoming_events_id;
