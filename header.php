@@ -2,6 +2,7 @@
     session_start();
     require_once 'backend/db.php';
     require_once 'backend/display_about_info.php';
+    require_once 'backend/display_footer_info.php';
     require_once 'backend/display_header_info.php';
     require_once 'backend/display_header_logo_and_favicon.php';
     require_once 'backend/display_hero_img_1.php';
@@ -10,9 +11,15 @@
     require_once 'backend/display_hero_info_1.php';
     require_once 'backend/display_hero_info_2.php';
     require_once 'backend/display_hero_info_3.php';
+    require_once 'backend/display_menu_items.php';
+    require_once 'backend/display_menu_titles.php';
+    require_once 'backend/display_our_strengths.php';
     require_once 'backend/display_promo_imgs.php';
     require_once 'backend/display_promo_info.php';
+    require_once 'backend/display_reservations.php';
+    require_once 'backend/display_reviews.php';
     require_once 'backend/display_special_dish_info.php';
+    require_once 'backend/display_upcoming_events.php';
 
   if (isset($_SESSION["user_id"])) {
 
@@ -59,6 +66,7 @@ $user = $result->fetch_assoc();
       src="https://kit.fontawesome.com/7a6c6b42a6.js"
       crossorigin="anonymous"
     ></script>
+    <script src="assets/js/shopping-cart.js" defer></script>
 
   <!-- 
     - google font link
@@ -66,6 +74,11 @@ $user = $result->fetch_assoc();
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="<?= $business_name_font; ?>" rel="stylesheet">
+
+  <!-- 
+    - shopping-cart css link
+  -->
+  <link rel="stylesheet" href="./assets/css/shopping-cart.css">
 
   <!-- 
     - custom css link
