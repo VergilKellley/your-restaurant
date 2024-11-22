@@ -144,22 +144,18 @@ if (!isset($_SESSION["user_id"])) {
                             <span
                                 style="display:flex; flex-direction:column; align-items:center; font-weight:bold">title & text:
                             </span>
-                            <p><?= $reservation_info['main_title'] ?></p>
+                            <p style="font-weight:bold">reservations title:</p>
+                            <p><?= $reservation_info['reservation_title'] ?></p>
+                            <br>
+                            <p style="font-weight:bold">reservations text:</p>
                             <p><?= $reservation_info['reservation_text'] ?></p>
-                        </p>
-                    <br>
-                        <p style="max-width:100vw">
-                            <span
-                                style="display:flex; flex-direction:column; align-items:center; font-weight:bold">hours:
-                            </span>
-                            <p><?= $reservation_info['hours'] ?></p>
                         </p>
                     <br>
                     <?php
                     
                         echo "
                         <div style='display:flex; justify-content:center; align-items:center; padding-bottom:20px'>
-                        <p><a class='btn btn-edit' href='backend/update_reservation_logo_and_favicon?id=" . $reservation_info['id'] . "'>Edit</a></p>
+                        <p><a class='btn btn-edit' href='backend/update_reservations_title_info?id=" . $reservation_info['id'] . "'>Edit</a></p>
                         <br>
                         </div>
                     </div>
@@ -180,7 +176,7 @@ if (!isset($_SESSION["user_id"])) {
                 style=" display: flex; flex-direction:column; align-items:center; gap:1rem; height: 500px; overflow-y:scroll; border:1px solid #333; padding: 10px">
 
                 <?php
-                    $reservation_info_query = "SELECT * FROM reservation_info";
+                    $reservation_info_query = "SELECT * FROM reservations";
                     $reservation_info_result = mysqli_query($conn, $reservation_info_query);
                     ?>
                 <?php while ($reservation_info = mysqli_fetch_assoc($reservation_info_result)) : ?>
