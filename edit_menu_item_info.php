@@ -21,14 +21,28 @@ if (!isset($_SESSION["user_id"])) {
         box-sizing: border-box;
     }
 
+    .delete-btn {
+        padding: 13px 10px;
+        border-radius: 5px;
+        background: red;
+        color: #fff;
+        border: none;
+    }
+
+    .delete-btn:hover {
+        cursor: pointer;
+        background: #fff;
+        color: red;
+        border: 1px solid red;
+    }
+
     input {
         padding: 10px;
         font-size: 18px;
         margin-top: 10px;
     }
 
-    div p,
-    label {
+    div label {
         font-weight: bold;
     }
 
@@ -125,18 +139,74 @@ if (!isset($_SESSION["user_id"])) {
         </div>
 
         <br>
+        <br>
+        <div class='mobile-edit-photos' style='max-width:500px'>
+            
+            <br>
+            <div
+                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; overflow-y:scroll; border:1px solid #333; padding: 10px">
+                <div>
+                <h2>edit menu titles</h2>
+            </div>
 
-        <!-- MENU ITEM IMAGE 1 -->
-        <div class='mobile-edit-photos'>
-            <div>
-                <h2>edit menu image & description</h2>
+                <?php
+                    $menu_titles_info_query = "SELECT * FROM menu_titles";
+                    $menu_titles_info_result = mysqli_query($conn, $menu_titles_info_query);
+                    ?>
+                <?php while ($menu_titles_info = mysqli_fetch_assoc($menu_titles_info_result)) : ?>
+                <div class='nth-child-bkgd-color'
+                    style=' padding:10px; line-height: 1.5; max-width:100%'>
+                    <input type="hidden" name="id" value="<?= $menu_titles_info['id'] ?>">
+                    <?php
+                            GLOBAL $menu_titles_id;
+                            $menu_titles_id = $menu_titles_info['id'];
+                            ?>
+
+                    <br>
+
+                    <p style='font-weight:bold'>small top title:</p>
+                    <p style="max-width:100vw">
+                        <span><?= $menu_titles_info['menu_small_top_title']; ?></span>
+                    </p>
+                    <br>
+                    <p style='font-weight:bold'>main title:</p>
+                    <p style="max-width:100vw">
+                        <span><?=$menu_titles_info['menu_main_title']; ?></span>
+                    </p>
+                    <br>
+                    <p style='font-weight:bold'>sub title:</p>
+                    <p style="max-width:100vw">
+                        <span><?=$menu_titles_info['menu_sub_title']; ?></span>
+                    </p>
+                    <br>
+                    <?php
+                    
+                        echo "
+                        <div style='display:flex; justify-content:center; align-items:center; margin-bottom:20px'>
+                        <p><a class='btn btn-edit' href='backend/update_menu_titles_info.php?id=" . $menu_titles_info['id'] . "'>Edit</a></p>
+
+                        
+                                    </div>
+                        </div>";                       
+                        ?>
+                    <?php endwhile ?>
+                </div>
             </div>
         </div>
 
-        <!-- MENU IMAGE ITEM -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- MENU ITEM IMAGE 1 -->
+        <div class='mobile-edit-photos'>
+            <div id="menu-img-desc">
+                <h2>edit item image & description</h2>
+            </div>
+        </div>
 
         <div id="edit-img">
-        <?php
+            <?php
                         if(isset($_SESSION['empty_image'])) {
                             echo "<div style='border:1px solid red; padding:10px'>
                                     <p style='color:red;font-weight:bold; font-size:2rem';>" . $_SESSION['empty_image'] . "</p>
@@ -147,7 +217,7 @@ if (!isset($_SESSION["user_id"])) {
                         ?>
         </div>
         <?php
-                    $menu_info_query = "SELECT * FROM menu_item";
+                    $menu_info_query = "SELECT * FROM menu_item WHERE entre_menu_item_num != 0";
                     $menu_info_result = mysqli_query($conn, $menu_info_query);
                     ?>
         <?php while ($menu_info = mysqli_fetch_assoc($menu_info_result)) : ?>
@@ -161,22 +231,22 @@ if (!isset($_SESSION["user_id"])) {
                                 ?>
                     <input type="hidden" name="id" value="<?= $menu_info['id'] ?>">
 
-                    
+
                     <div style="display:flex; justify-content:space-around">
-                        <div style="display:flex; flex-direction:column">
+                        <div style="display:flex; flex-direction:column; width:70%">
                             <label for="menu-item-num">item number:</label>
-                            <p><?= $menu_info['menu_item_num'] ?></p>
+                            <p><?= $menu_info['entre_menu_item_num'] ?></p>
                             <br>
-                            <p>image description:</p>
-                            <p><?= $menu_info['menu_item_img_desc'] ?></p>
+                            <p style='font-weight:bold'>image description:</p>
+                            <p><?= $menu_info['entre_menu_item_img_desc'] ?></p>
                         </div>
 
 
-                        
+
                         <div style="display:flex; flex-direction:column">
-                            <p style="margin-bottom:10px">current image:</p>
+                            <p style="margin-bottom:10px; font-weight:bold">current image:</p>
                             <img style="height:100px; width:100px"
-                                src="assets/images/<?= $menu_info['menu_item_img']; ?>" alt="">
+                                src="assets/images/<?= $menu_info['entre_menu_item_img']; ?>" alt="">
                         </div>
                     </div>
                 </div>
@@ -191,18 +261,37 @@ if (!isset($_SESSION["user_id"])) {
         <?php endwhile; ?>
         </div>
 
-        <!-- MENU ITEM IMAGE 1 -->
+        <br>
+        <br>
+        <!-- MENU ITEM NUMBER, NAME & DESCRIPTION -->
         <div class='mobile-edit-photos'>
-            <div>
-                <h2>edit menu text</h2>
+            <div id="item-num-name-desc">
+                <h2>edit item number, name, price & description</h2>
             </div>
         </div>
+        <!-- <div id='question-delete-modal'>
+
+                            <?php
+                                if(isset($_SESSION['question_delete_menu_item'])) {
+                                echo "<div style='border:1px solid red; padding:10px'>
+
+                                <p style='color:red;font-weight:bold; font-size:2rem';>" . $_SESSION['question_delete_menu_item'] . "</p>
+                                
+                                <form action='backend\delete_menu_item.php' method='POST'>
+
+                                <button class='delete-btn' type='button' name='submit_delete_menu_item' value='" . $menu_info['id'] . "'>Delete</button>
+                                </form> </div>";
+                                        
+                                    
+                                }
+                                unset ($_SESSION['question_delete_menu_item']);
+                        ?>
+                        </div> -->
 
 
         <!-- MENU ITEM TEXT INFO -->
-        <br>
         <?php
-                    $menu_info_query = "SELECT * FROM menu_item";
+                    $menu_info_query = "SELECT * FROM menu_item WHERE entre_menu_item_num != 0";
                     $menu_info_result = mysqli_query($conn, $menu_info_query);
                     ?>
         <?php while ($menu_info = mysqli_fetch_assoc($menu_info_result)) : ?>
@@ -224,64 +313,69 @@ if (!isset($_SESSION["user_id"])) {
                         <div style="display:flex; flex-direction: column; margin-top:15px">
 
                             <div style="display:flex; justify-content:space-around">
-                                <div style="display:flex; flex-direction:column">
-                                    <p>item number:</p>
-                                    <p><?= $menu_info['menu_item_num'] ?></p>
+                                <div style="display:flex; flex-direction:column; width:40%">
+                                    <p style='font-weight:bold'>item number:</p>
+                                    <p><?= $menu_info['entre_menu_item_num'] ?></p>
                                     <div>
                                         <br>
-                                        <p>image description:</p>
-                                        <p><?= $menu_info['menu_item_img_desc'] ?></p>
+                                        <p style='font-weight:bold'>image description:</p>
+                                        <p><?= $menu_info['entre_menu_item_img_desc'] ?></p>
                                     </div>
                                 </div>
 
-                                <div style="display:flex; flex-direction:column">
-                                    <p style="margin-bottom:10px">current image:</p>
+                                <div style="display:flex; flex-direction:column; width:50%">
+                                    <p style="margin-bottom:10px; font-weight:bold">current image:</p>
                                     <img style="height:100px; width:100px"
-                                        src="assets/images/<?= $menu_info['menu_item_img']; ?>" alt="">
+                                        src="assets/images/<?= $menu_info['entre_menu_item_img']; ?>" alt="<?= $menu_info['entre_menu_item_img_desc']; ?>">
                                 </div>
                             </div>
                             <br>
                         </div>
 
                         <div style="display:flex; justify-content:space-around">
-                            <div style="display:flex; flex-direction: column; margin-top:15px">
-                                <p>item name:</p>
-                                <p><?= $menu_info['menu_item_name'] ?></p>
+                            <div style="display:flex; flex-direction: column; margin-top:15px; width:40%">
+                                <p style='font-weight:bold'>item name:</p>
+                                <p><?= $menu_info['entre_menu_item_name'] ?></p>
                             </div>
-                            <div style="display:flex; flex-direction:column;margin-top:15px">
-                                <p>new or seasonal item:</p>
-                                <p><?= $menu_info['menu_item_desc'] ?></p>
+                            <div style="display:flex; flex-direction:column;margin-top:15px; width:50%">
+                                <p style='font-weight:bold'>new or seasonal item:</p>
+                                <p><?= $menu_info['entre_menu_item_desc'] ?></p>
                             </div>
                         </div>
                         <div style="display:flex; justify-content:space-around">
-                            <div style="display:flex; flex-direction: column; margin-top:15px">
-                                <p>item price:</p>
-                                <p><?= $menu_info['menu_item_price'] ?></p>
+                            <div style="display:flex; flex-direction: column; margin-top:15px; width:40%">
+                                <p style='font-weight:bold'>item price:</p>
+                                <p><?= $menu_info['entre_menu_item_price'] ?></p>
                             </div>
-                            <div style="display:flex; flex-direction:column;margin-top:15px; width:35%">
-                                <p>item description:</p>
-                                <p><?= $menu_info['menu_item_text'] ?></p>
+                            <div style="display:flex; flex-direction:column;margin-top:15px; width:50%">
+                                <p style='font-weight:bold'>item description:</p>
+                                <p><?= $menu_info['entre_menu_item_text'] ?></p>
                             </div>
                         </div>
-
-
-
                     </div>
-                    <div style="display:flex; flex-direction:column; margin-top:40px">
+                    <div style="display:flex; margin-top:40px; align-items:center; justify-content:center">
                         <?php                   
                                 echo "
-                                    <div style='display:flex; justify-content:center; align-items:center; margin-bottom:20px'>
+                                    <div style='display:flex; justify-content:center; align-items:center; margin-right:10px'>
                                     <p><a class='btn btn-edit' href='backend/update_edit_menu_item_info.php?id=" . $menu_info['id'] . "'>Edit</a></p>
                                 </div>";                       
                             ?>
-                        <!-- <button type="submit" class="btn btn-edit" style="margin-top:10px;">SAVE</button> -->
+                        
+                        <div>
+                            <?php
+                         echo "
+                            <form action='backend\delete_menu_item.php' method='POST'>
+                            <button class='delete-btn' type='submit' name='submit_delete_menu_item' value='" . $menu_info['id'] . "'>Delete</button>
+                        </form>";
+                        ?>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <?php endwhile; ?>
     </section>
-    <script src="js/closeModals.js" defer></script>
+    <!-- <script src="js/closeModals.js" defer></script> -->
 </body>
 
 </html>
