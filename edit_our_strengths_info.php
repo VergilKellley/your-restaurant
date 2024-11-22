@@ -114,6 +114,7 @@ if (!isset($_SESSION["user_id"])) {
             <a href="index.php">Back</a>
         </div>
 
+        <br>
         <!-- TITLES -->
 
         <div class='mobile-edit-photos' style='max-width:500px'>
@@ -122,7 +123,7 @@ if (!isset($_SESSION["user_id"])) {
             </div>
             <br>
             <div
-                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; overflow-y:scroll; border:1px solid #333; padding: 10px">
+                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; border:1px solid #333; padding: 10px">
 
                 <?php
                     $our_strengths_info_query = "SELECT * FROM our_strengths ";
@@ -130,7 +131,7 @@ if (!isset($_SESSION["user_id"])) {
                     ?>
                 <?php while ($our_strengths_info = mysqli_fetch_assoc($our_strengths_info_result)) : ?>
                 <div class='nth-child-bkgd-color'
-                    style='border:1px solid #333; padding:10px; line-height: 1.5; max-width:100%'>
+                    style=' padding:10px; line-height: 1.5; max-width:100%'>
                     <input type="hidden" name="id" value="<?= $our_strengths_info['id'] ?>">
                     <?php
                             GLOBAL $our_strengths_id;
@@ -158,6 +159,8 @@ if (!isset($_SESSION["user_id"])) {
             </div>
         </div>
 
+        <br>
+        <br>
         <!-- IMAGE 1 -->
 
         <div class='form-container' style="display: flex; flex-direction:column; gap:4rem;">
@@ -175,7 +178,7 @@ if (!isset($_SESSION["user_id"])) {
                 </div>
                 <br>
                 <div
-                    style="display:flex; flex-direction:column; gap:1rem; padding:10px;max-width:500px; min-width:300px">
+                    style="display:flex; flex-direction:column; gap:1rem;max-width:500px; min-width:300px">
 
                     <?php
                     $our_strengths_info_query = "SELECT * FROM our_strengths";
@@ -222,7 +225,7 @@ if (!isset($_SESSION["user_id"])) {
             <!-- IMAGE INFO 1 -->
 
             <div class='mobile-edit-photos' style='max-width:500px'>
-            <div>
+            <div id="edit-info-1">
                 <h2>image info 1</h2>
             </div>
             <br>
@@ -235,7 +238,7 @@ if (!isset($_SESSION["user_id"])) {
                     ?>
                 <?php while ($our_strengths_info = mysqli_fetch_assoc($our_strengths_info_result)) : ?>
                 <div class='nth-child-bkgd-color'
-                    style='border:1px solid #333; padding:10px; line-height: 1.5; max-width:100%'>
+                    style='padding:10px; line-height: 1.5; max-width:100%'>
                     <input type="hidden" name="id" value="<?= $our_strengths_info['id'] ?>">
                     <?php
                             GLOBAL $our_strengths_id;
@@ -267,6 +270,8 @@ if (!isset($_SESSION["user_id"])) {
             </div>
         </div>
 
+        <br>
+        <br>
 
         <div class='form-container' style="display: flex; flex-direction:column; gap:4rem;">
             <div style="padding:10px; max-width:500px; min-width:300px">
@@ -283,7 +288,7 @@ if (!isset($_SESSION["user_id"])) {
                 </div>
                 <br>
                 <div
-                    style="display:flex; flex-direction:column; gap:1rem; padding:10px;max-width:500px; min-width:300px">
+                    style="display:flex; flex-direction:column; gap:1rem;max-width:500px; min-width:300px">
 
                     <?php
                     $our_strengths_info_query = "SELECT * FROM our_strengths";
@@ -341,7 +346,7 @@ if (!isset($_SESSION["user_id"])) {
                     ?>
                 <?php while ($our_strengths_info = mysqli_fetch_assoc($our_strengths_info_result)) : ?>
                 <div class='nth-child-bkgd-color'
-                    style='border:1px solid #333; padding:10px; line-height: 1.5; max-width:100%'>
+                    style=' padding:10px; line-height: 1.5; max-width:100%'>
                     <input type="hidden" name="id" value="<?= $our_strengths_info['id'] ?>">
                     <?php
                             GLOBAL $our_strengths_id;
@@ -390,7 +395,7 @@ if (!isset($_SESSION["user_id"])) {
                 </div>
                 <br>
                 <div
-                    style="display:flex; flex-direction:column; gap:1rem; padding:10px;max-width:500px; min-width:300px">
+                    style="display:flex; flex-direction:column; gap:1rem; max-width:500px; min-width:300px">
 
                     <?php
                     $our_strengths_info_query = "SELECT * FROM our_strengths";
@@ -449,7 +454,7 @@ if (!isset($_SESSION["user_id"])) {
                     ?>
                 <?php while ($our_strengths_info = mysqli_fetch_assoc($our_strengths_info_result)) : ?>
                 <div class='nth-child-bkgd-color'
-                    style='border:1px solid #333; padding:10px; line-height: 1.5; max-width:100%'>
+                    style='padding:10px; line-height: 1.5; max-width:100%'>
                     <input type="hidden" name="id" value="<?= $our_strengths_info['id'] ?>">
                     <?php
                             GLOBAL $our_strengths_id;
@@ -498,7 +503,7 @@ if (!isset($_SESSION["user_id"])) {
                 </div>
                 <br>
                 <div
-                    style="display:flex; flex-direction:column; gap:1rem; padding:10px;max-width:500px; min-width:300px">
+                    style="display:flex; flex-direction:column; gap:1rem; max-width:500px; min-width:300px">
 
                     <?php
                     $our_strengths_info_query = "SELECT * FROM our_strengths";
@@ -557,7 +562,7 @@ if (!isset($_SESSION["user_id"])) {
                     ?>
                 <?php while ($our_strengths_info = mysqli_fetch_assoc($our_strengths_info_result)) : ?>
                 <div class='nth-child-bkgd-color'
-                    style='border:1px solid #333; padding:10px; line-height: 1.5; max-width:100%'>
+                    style=' padding:10px; line-height: 1.5; max-width:100%'>
                     <input type="hidden" name="id" value="<?= $our_strengths_info['id'] ?>">
                     <?php
                             GLOBAL $our_strengths_id;
@@ -589,6 +594,129 @@ if (!isset($_SESSION["user_id"])) {
             </div>
         </div>
 
+
+        <!-- RIGHT SIDE IMAGE -->
+
+        <div class='form-container' style="display: flex; flex-direction:column; gap:4rem;">
+            <div style="padding:10px; max-width:500px; min-width:300px">
+                <br>
+                <div id="edit-right-img">
+                    <h2>right image</h2>
+                    <?php
+                    if(isset($_SESSION['empty_right_image'])) {
+                        echo "<div style='border:1px solid red; padding:10px'>
+                                <p style='color:red;font-weight:bold; font-size:2rem';>" . $_SESSION['empty_right_image'] . "</p>";
+                        unset ($_SESSION['empty_right_image']);
+                    }
+                ?>
+                </div>
+                <br>
+                <div
+                    style="display:flex; flex-direction:column; gap:1rem; max-width:500px; min-width:300px">
+
+                    <?php
+                    $our_strengths_info_query = "SELECT * FROM our_strengths";
+                    $our_strengths_info_result = mysqli_query($conn, $our_strengths_info_query);
+                    ?>
+                    <?php while ($our_strengths_info = mysqli_fetch_assoc($our_strengths_info_result)) : ?>
+                    <div class='nth-child-bkgd-color'
+                        style='border:1px solid #333; padding:10px; line-height: 1.5; max-width:100%'>
+                        <input type="hidden" name="id" value="<?= $our_strengths_info['id'] ?>">
+                        <?php
+                            GLOBAL $our_strengths_id;
+                            $our_strengths_id = $our_strengths_info['id'];
+                            ?>
+
+                        <p style="max-width:100vw">
+                            <span
+                                style="display:flex; flex-direction:column; align-items:center; font-weight:bold">
+                                image:
+                                <img style='width:100px' src='assets/images/<?= $our_strengths_info['our_strengths_right_img'] ?>'
+                                    alt="<?= $our_strengths_info['our_strengths_right_img'] ?>">
+                                    <br>
+                                    <p style="font-weight:bold">right image description:</p>
+                                    <p><?= $our_strengths_info['our_strengths_right_img_desc'] ?></p>
+                            </span>
+                        </p>
+                        <br>
+                        <?php
+                    
+                        echo "
+                        <div style='display:flex; justify-content:center; align-items:center; padding-bottom:20px'>
+                        <p><a class='btn btn-edit' href='backend/update_our_strengths_right_img?id=" . $our_strengths_info['id'] . "'>Edit</a></p>
+                        <br>
+                        </div>
+                    </div>
+                    <br>";                       
+                        ?>
+                        <!-- <button name="add_our_strengths_info" class="btn btn-blk">Edit</button> -->
+                        <?php endwhile; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- LEFT SIDE IMAGE -->
+        <div class='form-container' style="display: flex; flex-direction:column; gap:4rem;">
+            <div style="padding:10px; max-width:500px; min-width:300px">
+                <br>
+                <div id="edit-left-img">
+                    <h2>left image</h2>
+                    <?php
+                    if(isset($_SESSION['empty_left_image'])) {
+                        echo "<div style='border:1px solid red; padding:10px'>
+                                <p style='color:red;font-weight:bold; font-size:2rem';>" . $_SESSION['empty_left_image'] . "</p>";
+                        unset ($_SESSION['empty_left_image']);
+                    }
+                ?>
+                </div>
+                <br>
+                <div
+                    style="display:flex; flex-direction:column; gap:1rem; max-width:500px; min-width:300px">
+
+                    <?php
+                    $our_strengths_info_query = "SELECT * FROM our_strengths";
+                    $our_strengths_info_result = mysqli_query($conn, $our_strengths_info_query);
+                    ?>
+                    <?php while ($our_strengths_info = mysqli_fetch_assoc($our_strengths_info_result)) : ?>
+                    <div class='nth-child-bkgd-color'
+                        style='border:1px solid #333; padding:10px; line-height: 1.5; max-width:100%'>
+                        <input type="hidden" name="id" value="<?= $our_strengths_info['id'] ?>">
+                        <?php
+                            GLOBAL $our_strengths_id;
+                            $our_strengths_id = $our_strengths_info['id'];
+                            ?>
+
+                        <p style="max-width:100vw">
+                            <span
+                                style="display:flex; flex-direction:column; align-items:center; font-weight:bold">
+                                image:
+                                <img style='width:100px' src='assets/images/<?= $our_strengths_info['our_strengths_left_img'] ?>'
+                                    alt="<?= $our_strengths_info['our_strengths_left_img'] ?>">
+                                    <br>
+                                    <p style="font-weight:bold">left image description:</p>
+                                    <p><?= $our_strengths_info['our_strengths_left_img_desc'] ?></p>
+                            </span>
+                        </p>
+                        <br>
+                        <?php
+                    
+                        echo "
+                        <div style='display:flex; justify-content:center; align-items:center; padding-bottom:20px'>
+                        <p><a class='btn btn-edit' href='backend/update_our_strengths_left_img?id=" . $our_strengths_info['id'] . "'>Edit</a></p>
+                        <br>
+                        </div>
+                    </div>
+                    <br>";                       
+                        ?>
+                        <!-- <button name="add_our_strengths_info" class="btn btn-blk">Edit</button> -->
+                        <?php endwhile; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         </div>
         </div>
     </section>
