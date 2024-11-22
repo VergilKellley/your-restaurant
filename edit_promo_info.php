@@ -109,17 +109,19 @@ if (!isset($_SESSION["user_id"])) {
 
 <body>
     <section id='header-edits' class="stylist_info_container;"
-        style="display:flex;flex-direction:column;  justify-content:center; place-items:center; margin: 5rem auto">
+        style="display:flex;flex-direction:column;  justify-content:center; align-items:center; margin: 5rem auto">
         <div>
             <a href="index.php">Back</a>
         </div>
+        <br>
+        <br>
         <div class='mobile-edit-photos' style='max-width:500px'>
-            <div>
+            <div  id="promo-titles">
                 <h2>edit promotions titles</h2>
             </div>
             <br>
             <div
-                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; overflow-y:scroll; border:1px solid #333; padding: 10px">
+                style=" display: flex; flex-direction:column; align-items:center; border:1px solid #333; padding: 10px">
 
                 <?php
                     $promotions_info_query = "SELECT * FROM promotions";
@@ -127,7 +129,7 @@ if (!isset($_SESSION["user_id"])) {
                     ?>
                 <?php while ($promotions_info = mysqli_fetch_assoc($promotions_info_result)) : ?>
                 <div class='nth-child-bkgd-color'
-                    style='border:1px solid #333; padding:10px; line-height: 1.5; max-width:100%'>
+                    style='padding:10px; line-height: 1.5; max-width:100%'>
                     <input type="hidden" name="id" value="<?= $promotions_info['id'] ?>">
                     <?php
                             GLOBAL $promotions_id;
@@ -136,19 +138,19 @@ if (!isset($_SESSION["user_id"])) {
 
                     <br>
 
-                    <p>small top title:</p>
+                    <p  style='font-weight:bold'>small top title:</p>
                     <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$promotions_info['small_top_title']; ?></span>
+                        <span><?=$promotions_info['small_top_title']; ?></span>
                     </p>
                     <br>
-                    <p>main title:</p>
+                    <p  style='font-weight:bold'>main title:</p>
                     <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$promotions_info['main_title']; ?></span>
+                        <span><?=$promotions_info['main_title']; ?></span>
                     </p>
                     <br>
-                    <p>sub title:</p>
+                    <p  style='font-weight:bold'>sub title:</p>
                     <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$promotions_info['sub_title']; ?></span>
+                        <span><?=$promotions_info['sub_title']; ?></span>
                     </p>
                     <br>
                     <?php
@@ -156,9 +158,6 @@ if (!isset($_SESSION["user_id"])) {
                         echo "
                         <div style='display:flex; justify-content:center; align-items:center; margin-bottom:20px'>
                         <p><a class='btn btn-edit' href='backend/update_promo_titles_info.php?id=" . $promotions_info['id'] . "'>Edit</a></p>
-
-                        
-                                    </div>
                         </div>";                       
                         ?>
                     <?php endwhile ?>
@@ -166,7 +165,9 @@ if (!isset($_SESSION["user_id"])) {
             </div>
         </div>
 
-        <div class='form-container' style="display: flex; gap:4rem;">
+        <br>
+        <br>
+        <div class='form-container' style="display: flex; flex-direction:column; gap:4rem;">
             <div style="padding:10px; max-width:500px; min-width:300px">
                 <br>
                 <div id="promo-img-1">
@@ -181,7 +182,7 @@ if (!isset($_SESSION["user_id"])) {
                 </div>
                 <br>
                 <div
-                    style="display:flex; flex-direction:column; gap:1rem; padding:10px;max-width:500px; min-width:300px">
+                    style="display:flex; flex-direction:column; gap:1rem;max-width:500px; min-width:300px">
 
                     <?php
                     $promotions_info_query = "SELECT * FROM promotions";
@@ -221,38 +222,35 @@ if (!isset($_SESSION["user_id"])) {
                 </div>
             </div>
             <br>
-
+            <br>
             <div class='mobile-edit-photos' style='max-width:500px'>
-            <div>
+            <div id="promo-info-1">
                 <h2>edit promotions info 1</h2>
             </div>
             <br>
             <div
-                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; overflow-y:scroll; border:1px solid #333; padding: 10px">
-
+                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; border:1px solid #333; padding: 10px">
                 <?php
                     $promotions_info_query = "SELECT * FROM promotions";
                     $promotions_info_result = mysqli_query($conn, $promotions_info_query);
                     ?>
                 <?php while ($promotions_info = mysqli_fetch_assoc($promotions_info_result)) : ?>
                 <div class='nth-child-bkgd-color'
-                    style='border:1px solid #333; padding:10px; line-height: 1.5; max-width:100%'>
+                    style='padding:10px; line-height: 1.5; max-width:100%'>
                     <input type="hidden" name="id" value="<?= $promotions_info['id'] ?>">
                     <?php
                             GLOBAL $promotions_id;
                             $promotions_id = $promotions_info['id'];
                             ?>
-
                     <br>
-
-                    <p>promotions img title 1:</p>
+                    <p  style='font-weight:bold'>promotions img title 1:</p>
                     <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$promotions_info['promo_img_title_1']; ?></span>
+                        <span><?=$promotions_info['promo_img_title_1']; ?></span>
                     </p>
                     <br>
-                    <p>promotions img text 1:</p>
+                    <p  style='font-weight:bold'>promotions img text 1:</p>
                     <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$promotions_info['promo_img_text_1']; ?></span>
+                        <span><?=$promotions_info['promo_img_text_1']; ?></span>
                     </p>
                     <br>
                     <?php
@@ -260,9 +258,6 @@ if (!isset($_SESSION["user_id"])) {
                         echo "
                         <div style='display:flex; justify-content:center; align-items:center; margin-bottom:20px'>
                         <p><a class='btn btn-edit' href='backend/update_promo_info_1.php?id=" . $promotions_info['id'] . "'>Edit</a></p>
-
-                        
-                                    </div>
                         </div>";                       
                         ?>
                     <?php endwhile ?>
@@ -273,10 +268,11 @@ if (!isset($_SESSION["user_id"])) {
                 </div>
             </div>
         </div>
-
-
-        <div class='form-container' style="display: flex; gap:4rem;">
+        <br>
+        <br>
+        <div class='form-container' style="display: flex; flex-direction:column; gap:4rem;">
             <div style="padding:10px; max-width:500px; min-width:300px">
+                <br>
                 <br>
                 <div id="promo-img-2">
                     <h2>edit promotions image 2</h2>
@@ -290,7 +286,7 @@ if (!isset($_SESSION["user_id"])) {
                 </div>
                 <br>
                 <div
-                    style="display:flex; flex-direction:column; gap:1rem; padding:10px;max-width:500px; min-width:300px">
+                    style="display:flex; flex-direction:column; gap:1rem; max-width:500px; min-width:300px">
 
                     <?php
                     $promotions_info_query = "SELECT * FROM promotions";
@@ -330,14 +326,14 @@ if (!isset($_SESSION["user_id"])) {
                 </div>
             </div>
             <br>
-
+            <br>
             <div class='mobile-edit-photos' style='max-width:500px'>
-            <div>
+            <div id="promo-info-2">
                 <h2>edit promotions info 2</h2>
             </div>
             <br>
             <div
-                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; overflow-y:scroll; border:1px solid #333; padding: 10px">
+                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; border:1px solid #333; padding: 10px">
 
                 <?php
                     $promotions_info_query = "SELECT * FROM promotions";
@@ -345,23 +341,21 @@ if (!isset($_SESSION["user_id"])) {
                     ?>
                 <?php while ($promotions_info = mysqli_fetch_assoc($promotions_info_result)) : ?>
                 <div class='nth-child-bkgd-color'
-                    style='border:1px solid #333; padding:10px; line-height: 1.5; max-width:100%'>
+                    style='padding:10px; line-height: 1.5; max-width:100%'>
                     <input type="hidden" name="id" value="<?= $promotions_info['id'] ?>">
                     <?php
                             GLOBAL $promotions_id;
                             $promotions_id = $promotions_info['id'];
                             ?>
-
                     <br>
-
-                    <p>promotions img title 2:</p>
+                    <p  style='font-weight:bold'>promotions img title 2:</p>
                     <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$promotions_info['promo_img_title_2']; ?></span>
+                        <span><?=$promotions_info['promo_img_title_2']; ?></span>
                     </p>
                     <br>
-                    <p>promotions img text 2:</p>
+                    <p  style='font-weight:bold'>promotions img text 2:</p>
                     <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$promotions_info['promo_img_text_2']; ?></span>
+                        <span><?=$promotions_info['promo_img_text_2']; ?></span>
                     </p>
                     <br>
                     <?php
@@ -369,9 +363,6 @@ if (!isset($_SESSION["user_id"])) {
                         echo "
                         <div style='display:flex; justify-content:center; align-items:center; margin-bottom:20px'>
                         <p><a class='btn btn-edit' href='backend/update_promo_info_2.php?id=" . $promotions_info['id'] . "'>Edit</a></p>
-
-                        
-                                    </div>
                         </div>";                       
                         ?>
                     <?php endwhile ?>
@@ -382,9 +373,9 @@ if (!isset($_SESSION["user_id"])) {
                 </div>
             </div>
         </div>
-
-
-        <div class='form-container' style="display: flex; gap:4rem;">
+        <br>
+        <br>
+        <div class='form-container' style="display: flex;flex-direction:column; gap:4rem;">
             <div style="padding:10px; max-width:500px; min-width:300px">
                 <br>
                 <div id="promo-img-3">
@@ -399,7 +390,7 @@ if (!isset($_SESSION["user_id"])) {
                 </div>
                 <br>
                 <div
-                    style="display:flex; flex-direction:column; gap:1rem; padding:10px;max-width:500px; min-width:300px">
+                    style="display:flex; flex-direction:column; gap:1rem; max-width:500px; min-width:300px">
 
                     <?php
                     $promotions_info_query = "SELECT * FROM promotions";
@@ -439,14 +430,14 @@ if (!isset($_SESSION["user_id"])) {
                 </div>
             </div>
             <br>
-
+            <br>
             <div class='mobile-edit-photos' style='max-width:500px'>
-            <div>
+            <div id="promo-info-3">
                 <h2>edit promotions info 3</h2>
             </div>
             <br>
             <div
-                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; overflow-y:scroll; border:1px solid #333; padding: 10px">
+                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; border:1px solid #333; padding: 10px">
 
                 <?php
                     $promotions_info_query = "SELECT * FROM promotions";
@@ -454,7 +445,7 @@ if (!isset($_SESSION["user_id"])) {
                     ?>
                 <?php while ($promotions_info = mysqli_fetch_assoc($promotions_info_result)) : ?>
                 <div class='nth-child-bkgd-color'
-                    style='border:1px solid #333; padding:10px; line-height: 1.5; max-width:100%'>
+                    style=' padding:10px; line-height: 1.5; max-width:100%'>
                     <input type="hidden" name="id" value="<?= $promotions_info['id'] ?>">
                     <?php
                             GLOBAL $promotions_id;
@@ -463,14 +454,14 @@ if (!isset($_SESSION["user_id"])) {
 
                     <br>
 
-                    <p>promotions img title 3:</p>
+                    <p  style='font-weight:bold'>promotions img title 3:</p>
                     <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$promotions_info['promo_img_title_3']; ?></span>
+                        <span><?=$promotions_info['promo_img_title_3']; ?></span>
                     </p>
                     <br>
-                    <p>promotions img text 3:</p>
+                    <p  style='font-weight:bold'>promotions img text 3:</p>
                     <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$promotions_info['promo_img_text_3']; ?></span>
+                        <span><?=$promotions_info['promo_img_text_3']; ?></span>
                     </p>
                     <br>
                     <?php
