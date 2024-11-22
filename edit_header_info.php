@@ -1,11 +1,15 @@
 <?php
 session_start();
 require "backend/db.php";
+
+if (!isset($_SESSION["user_id"])) {
+
+    header("Location: index");
+}
 // if (!isset($_SESSION["useruid"])) {
 
 //     header("Location: index.php");
 // }
-require "backend/db.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -112,7 +116,6 @@ require "backend/db.php";
         style="display:flex;flex-direction:column;  justify-content:center; place-items:center; margin: 0 auto">
 
         <div class='form-container' style="display: flex; gap:4rem;">
-
             <div style="padding:10px; max-width:500px; min-width:300px">
                 <div>
                     <a href="index.php">Back</a>
@@ -150,7 +153,7 @@ require "backend/db.php";
                     
                         echo "
                         <div style='display:flex; justify-content:center; align-items:center; padding-bottom:20px'>
-                        <p><a class='btn btn-edit' href='backend/update_header_logo_and_favicon.php?id=" . $header_info['id'] . "'>Edit</a></p>
+                        <p><a class='btn btn-edit' href='backend/update_header_logo_and_favicon?id=" . $header_info['id'] . "'>Edit</a></p>
                         <br>
                         </div>
                     </div>
