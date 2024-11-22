@@ -113,6 +113,7 @@ if (!isset($_SESSION["user_id"])) {
         <div>
             <a href="index.php">Back</a>
         </div>
+        <br>
         <div class='mobile-edit-photos' style='max-width:500px'>
             <div>
                 <h2>edit background image</h2>
@@ -133,7 +134,7 @@ if (!isset($_SESSION["user_id"])) {
                     $reviews_info_result = mysqli_query($conn, $reviews_info_query);
                     ?>
                 <?php while ($reviews_info = mysqli_fetch_assoc($reviews_info_result)) : ?>
-                <div class='nth-child-bkgd-color'
+                <div id="edit-bkgd-img" class='nth-child-bkgd-color'
                     style='border:1px solid #333; padding:10px; line-height: 1.5; max-width:100%'>
                     <input type="hidden" name="id" value="<?= $reviews_info['id'] ?>">
                     <?php
@@ -143,6 +144,15 @@ if (!isset($_SESSION["user_id"])) {
 
                     <br>
 
+                    <?php
+                        if(isset($_SESSION['empty_bkgd_image'])) {
+                            echo "<div style='border:1px solid red; padding:10px'>
+                                    <p style='color:red;font-weight:bold; font-size:2rem';>" . $_SESSION['empty_bkgd_image'] . "</p>
+                                    </div>";
+                                
+                            unset ($_SESSION['empty_bkgd_image']);
+                        }
+                        ?>
                     <p style="font-weight:bolder; margin-bottom:10px">current background image:</p>
                     <div style="display:flex;flex-direction:column; align-items:center;">
                         <img style="max-width:100%" src="assets/images/<?= $reviews_info['reviews_bkgd_img']; ?>"
@@ -158,7 +168,7 @@ if (!isset($_SESSION["user_id"])) {
                     
                         echo "
                         <div style='display:flex; justify-content:center; align-items:center; margin-bottom:20px'>
-                            <p><a class='btn btn-edit' href='backend/update_reviews_info.php?id=" . $reviews_info['id'] . "'>Edit</a></p>
+                            <p><a class='btn btn-edit' href='backend/update_reviews_bkgd_img.php?id=" . $reviews_info['id'] . "'>Edit</a></p>
                         </div>";                       
                         ?>
                     <?php endwhile ?>
@@ -214,9 +224,18 @@ if (!isset($_SESSION["user_id"])) {
             <br>
 
             <div class='mobile-edit-photos' style='max-width:500px'>
-                <div>
+                <div id="edit-small-img">
                     <h2>edit reviews small image</h2>
                 </div>
+                <?php
+                        if(isset($_SESSION['empty_small_image'])) {
+                            echo "<div style='border:1px solid red; padding:10px'>
+                                    <p style='color:red;font-weight:bold; font-size:2rem';>" . $_SESSION['empty_small_image'] . "</p>
+                                    </div>";
+                                
+                            unset ($_SESSION['empty_small_image']);
+                        }
+                        ?>
                 <br>
                 <div
                     style=" display: flex; flex-direction:column; align-items:center; gap:1rem;">
@@ -237,12 +256,12 @@ if (!isset($_SESSION["user_id"])) {
                         <br>
 
                         <p style="max-width:100vw; font-weight:bold">small image:</p>
-                        <img src="assets/images/<?=$reviews_info['reviews_small_img']; ?>" alt="<?=$reviews_info['reviews_small_img_desc']; ?>">
+                        <img style="width:100%" src="assets/images/<?=$reviews_info['reviews_small_img']; ?>" alt="<?=$reviews_info['reviews_small_img_desc']; ?>">
                         <br>
+
                         <p style="max-width:100vw; font-weight:bold">small image description:</p>
-                
-                            <span><?=$reviews_info['reviews_small_img_desc']; ?></span>
-                    
+                            <span><?=$reviews_info['reviews_small_img_desc']; ?>
+                        </span>                
                         <br>
                         <p style="max-width:100vw; font-weight:bold">small image text:</p>
                         <p style="max-width:100vw">
@@ -253,7 +272,7 @@ if (!isset($_SESSION["user_id"])) {
                     
                         echo "
                         <div style='display:flex; justify-content:center; align-items:center; margin-bottom:20px'>
-                        <p><a class='btn btn-edit' href='backend/update_reviews_info.php?id=" . $reviews_info['id'] . "'>Edit</a></p>
+                        <p><a class='btn btn-edit' href='backend/update_reviews_small_img.php?id=" . $reviews_info['id'] . "'>Edit</a></p>
                         </div>";                       
                         ?>
                         <?php endwhile ?>
