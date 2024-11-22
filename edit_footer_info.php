@@ -110,16 +110,20 @@ if (!isset($_SESSION["user_id"])) {
 <body>
     <section id='header-edits' class="stylist_info_container;"
         style="display:flex;flex-direction:column;  justify-content:center; place-items:center; margin: 0 auto">
+        <br>
+        <br>
         <div>
             <a href="index">Back</a>
         </div>
+        <br>
+        <br>
         <div class='mobile-edit-photos' style='max-width:500px'>
             <div>
                 <h2>edit footer</h2>
             </div>
             <br>
             <div
-                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; height: 500px; overflow-y:scroll; border:1px solid #333; padding: 10px">
+                style=" display: flex; flex-direction:column; align-items:center; gap:1rem; padding: 10px">
 
                 <?php
                     $footer_info_query = "SELECT * FROM footer";
@@ -127,7 +131,7 @@ if (!isset($_SESSION["user_id"])) {
                     ?>
                 <?php while ($footer_info = mysqli_fetch_assoc($footer_info_result)) : ?>
                 <div class='nth-child-bkgd-color'
-                    style='border:1px solid #333; padding:10px; line-height: 1.5; max-width:100%'>
+                    style='border:1px solid #333; padding:10px; line-height: 1.5; width:100%'>
                     <input type="hidden" name="id" value="<?= $footer_info['id'] ?>">
                     <?php
                             GLOBAL $footer_id;
@@ -136,14 +140,14 @@ if (!isset($_SESSION["user_id"])) {
 
                     <br>
 
-                    <p>main title:</p>
+                    <p style='font-weight:bold'>main title:</p>
                     <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$footer_info['footer_main_title']; ?></span>
+                        <span><?=$footer_info['footer_main_title']; ?></span>
                     </p>
                     <br>
-                    <p>sub title:</p>
+                    <p style='font-weight:bold'>sub title:</p>
                     <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$footer_info['footer_sub_title']; ?></span>
+                        <span><?=$footer_info['footer_sub_title']; ?></span>
                     </p>
                     <br>
                     
@@ -179,22 +183,24 @@ if (!isset($_SESSION["user_id"])) {
                             $footer_id = $footer_info['id'];
                             ?>
 
-                    <p>facebook:</p>
+                    <p style="font-weight:bolder;">facebook:</p>
                     <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$footer_info['footer_facebook']; ?></span>
+                        <span style=' word-wrap: break-word;'><?=$footer_info['footer_facebook']; ?></span>
                     </p>
-
-                    <p>instagram:</p>
+                    <br>
+                    <p style="font-weight:bolder;">instagram:</p>
                     <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$footer_info['footer_instagram']; ?></span>
+                        <span style='word-wrap: break-word;'><?=$footer_info['footer_instagram']; ?></span>
                     </p>
-                    <p>YouTube:</p>
+                    <br>
+                    <p style="font-weight:bolder;">YouTube:</p>
                     <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$footer_info['footer_youtube']; ?></span>
+                        <span style='word-wrap: break-word;'><?=$footer_info['footer_youtube']; ?></span>
                     </p>
-                    <p>Google Map:</p>
-                    <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$footer_info['footer_google_map']; ?></span>
+                    <br>
+                    <p style="font-weight:bolder;">Google Map:</p>
+                    <p style="max-width:100vw;">
+                        <span style='word-wrap: break-word;'><?=$footer_info['footer_google_map']; ?></span>
                     </p>
                         <br>
                         <?php
