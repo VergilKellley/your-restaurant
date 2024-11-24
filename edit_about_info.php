@@ -4,7 +4,7 @@ require "backend/db.php";
 
 if (!isset($_SESSION["user_id"])) {
 
-    header("Location: index.php");
+    header("Location: index");
 }
 ?>
 <!DOCTYPE html>
@@ -127,7 +127,7 @@ if (!isset($_SESSION["user_id"])) {
                     ?>
                 <?php while ($about_info = mysqli_fetch_assoc($about_info_result)) : ?>
                 <div class='nth-child-bkgd-color'
-                    style='border:1px solid #333; padding:10px; line-height: 1.5; max-width:100%'>
+                    style='padding:10px; line-height: 1.5; max-width:100%'>
                     <input type="hidden" name="id" value="<?= $about_info['id'] ?>">
                     <?php
                             GLOBAL $about_id;
@@ -136,28 +136,28 @@ if (!isset($_SESSION["user_id"])) {
 
                     <br>
 
-                    <p>small title:</p>
+                    <p style='font-weight:bold'>small title:</p>
                     <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$about_info['about_small_title']; ?></span>
+                        <span><?=$about_info['about_small_title']; ?></span>
                     </p>
                     <br>
-                    <p>main title:</p>
+                    <p style='font-weight:bold'>main title:</p>
                     <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$about_info['about_main_title']; ?></span>
+                        <span><?=$about_info['about_main_title']; ?></span>
                     </p>
                     <br>
-                    <p>text</p>
+                    <p style='font-weight:bold'>text</p>
                     <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$about_info['about_text']; ?></span>
+                        <span><?=$about_info['about_text']; ?></span>
                     </p>
 
-                    <p>sub-title</p>
+                    <p style='font-weight:bold'>sub-title</p>
                     <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$about_info['about_sub_title']; ?></span>
+                        <span><?=$about_info['about_sub_title']; ?></span>
                     </p>
-                    <p>since year</p>
+                    <p style='font-weight:bold'>since year</p>
                     <p style="max-width:100vw">
-                        <span style='font-weight:bold'><?=$about_info['about_since_year']; ?></span>
+                        <span><?=$about_info['about_since_year']; ?></span>
                     </p>
                     <br>
                     <?php
@@ -178,8 +178,15 @@ if (!isset($_SESSION["user_id"])) {
         <div class='form-container' style="display: flex; gap:4rem;">
             <div style="padding:10px; max-width:500px; min-width:300px">
                 <br>
-                <div>
+                <div id="small-img">
                     <h2>small image </h2>
+                    <?php
+                        if(isset($_SESSION['empty_image'])) {
+                            echo "<div style='border:1px solid red; padding:10px'>
+                                    <p style='color:red;font-weight:bold; font-size:2rem';>" . $_SESSION['empty_image'] . "</p>";
+                            unset ($_SESSION['empty_image']);
+                        }
+                        ?>
                 </div>
                 <br>
                 <div
@@ -228,8 +235,15 @@ if (!isset($_SESSION["user_id"])) {
         <div class='form-container' style="display: flex; gap:4rem;">
             <div style="padding:10px; max-width:500px; min-width:300px">
                 <br>
-                <div>
+                <div id="large-img">
                     <h2>large image </h2>
+                    <?php
+                        if(isset($_SESSION['empty_large_image'])) {
+                            echo "<div style='border:1px solid red; padding:10px'>
+                                    <p style='color:red;font-weight:bold; font-size:2rem';>" . $_SESSION['empty_large_image'] . "</p>";
+                            unset ($_SESSION['empty_large_image']);
+                        }
+                        ?>
                 </div>
                 <br>
                 <div
