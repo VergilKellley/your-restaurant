@@ -32,8 +32,10 @@ if ($_SERVER["REQUEST_METHOD"] != "GET") {
  
         <section style='padding: 20px; width:100vw; display:flex; justify-content: center; align-content:center'>
             <div style='width: 100%; max-width: 525px;'>
-                <a style='font-size:18px' href="../edit_promo_info.php"> Back</a>
-                <h2 style='font-size:22px; padding: 30px;'>Edit</h2>
+                <a style='font-size:18px' href="../edit_promo_info#promo-info-1"> Back</a>
+                <br>
+                <br>
+                <!-- <h2 style='font-size:22px; padding: 30px;'>Edit</h2> -->
                 
                 <form style=" display:flex; flex-direction:column; gap 1rem; width:100%"
                     action="update_promo_info_logic.php" enctype="multipart/form-data" method="POST">
@@ -45,11 +47,11 @@ if ($_SERVER["REQUEST_METHOD"] != "GET") {
                     <div style="display: flex; flex-direction:column; font-size:22px; gap: 1rem">
 
 
-                        <label for="promo_img_title_1">promotions title 1</label>
+                        <label for="promo_img_title_1">image title 1</label>
                         <input style="padding:10px; font-size: 22px" type="text" name="promo_img_title_1"
                             id="promo_img_title_1" value="<?= $promo_info_1['promo_img_title_1']; ?>" />
 
-                        <label for="promo_img_text_1">promotions image text 1</label>
+                        <label for="promo_img_text_1">image text 1</label>
                         <input style="padding:10px; font-size: 22px" type="text" name="promo_img_text_1"
                             id="promo_img_text_1" value="<?= $promo_info_1['promo_img_text_1']; ?>" />
 
