@@ -32,9 +32,10 @@ if ($_SERVER["REQUEST_METHOD"] != "GET") {
  
         <section style='padding: 20px; width:100vw; display:flex; justify-content: center; align-content:center'>
             <div style='width: 100%; max-width: 525px;'>
-                <a style='font-size:18px' href="../edit_promo_info.php"> Back</a>
-                <h2 style='font-size:22px; padding: 30px;'>Edit</h2>
-                
+                <a style='font-size:18px' href="../edit_promo_info#promo-info-2"> Back</a>
+                <!-- <h2 style='font-size:22px; padding: 30px;'>Edit</h2> -->
+                <br>
+                <br>
                 <form style=" display:flex; flex-direction:column; gap 1rem; width:100%"
                     action="update_promo_info_logic.php" enctype="multipart/form-data" method="POST">
 
@@ -49,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] != "GET") {
                         <input style="padding:10px; font-size: 22px" type="text" name="promo_img_title_2"
                             id="promo_img_title_2" value="<?= $promo_info_2['promo_img_title_2']; ?>" />
 
-                        <label for="promo_img_text_2">promotions image text 2</label>
+                        <label for="promo_img_text_2">image text 2</label>
                         <input style="padding:10px; font-size: 22px" type="text" name="promo_img_text_2"
                             id="promo_img_text_2" value="<?= $promo_info_2['promo_img_text_2']; ?>" />
 
