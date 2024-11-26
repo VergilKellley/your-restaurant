@@ -33,8 +33,8 @@ if (($_SERVER["REQUEST_METHOD"] != "GET") || (!isset($_SESSION["user_id"]))) {
     <body>
         <section style='padding: 20px; width:100vw; display:flex; justify-content: center; align-content:center'>
             <div style='width: 100%; max-width: 525px;'>
-                <a style='font-size:18px' href="../edit_promo_info.php"> Back</a>
-                <h2 style='font-size:22px; padding: 30px;'>Edit</h2>
+                <a style='font-size:18px' href="../edit_promo_info#promo-img-2"> Back</a>
+                <!-- <h2 style='font-size:22px; padding: 30px;'>Edit</h2> -->
                 
                 <form style=" display:flex; flex-direction:column; gap 1rem; width:100%"
                     action="update_promo_info_logic.php" enctype="multipart/form-data" method="POST">
@@ -44,8 +44,16 @@ if (($_SERVER["REQUEST_METHOD"] != "GET") || (!isset($_SESSION["user_id"]))) {
                     <input style="margin-bottom:1rem" type="hidden" name="id" value="<?= $promo_info_2['id'] ?>" />
 
                     <div style="display: flex; flex-direction:column; font-size:22px; gap: 1rem">
+                        <p>current image:</p>
+                        <img src="../assets/images/<?= $promo_info_2['promo_img_2']; ?>" alt="">
+                    </div>
 
-                        <label for="promo_img">promo image 2</label>
+                    <br>
+                    <br>
+                    <br>
+                    <div style="display: flex; flex-direction:column; font-size:22px; gap: 1rem">
+
+                        <label for="promo_img">choose a new image:</label>
 
                         <input style=" font-size: 22px; padding:10px" type="file" name="image" id="promo_img"
                             value="<?= $promo_info_2['promo_img_2'] ?>" />
