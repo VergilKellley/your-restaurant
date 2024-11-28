@@ -26,6 +26,5 @@ if (($_SERVER["REQUEST_METHOD"] != "POST") || (!isset($_SESSION["user_id"]))) {
                 header('location: ../index.php');
                 die();
             }
-        // }
-    }
-// }
+        }
+    
