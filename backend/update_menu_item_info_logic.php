@@ -14,9 +14,9 @@ if (($_SERVER["REQUEST_METHOD"] != "POST") || (!isset($_SESSION["user_id"])) || 
 
     
 
-    $menu_item_info_id = filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT);
+    $entre_menu_item_info_id = filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT);
     $fileName = $_FILES["image"]["name"];
-    $menu_item_img_desc = filter_var($_POST['menu_item_img_desc'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $entre_menu_item_img_desc = filter_var($_POST['entre_menu_item_img_desc'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
     // $news_article_text = htmlspecialchars($_POST["news_article_text"]
     // , ENT_QUOTES);
@@ -29,7 +29,7 @@ if (($_SERVER["REQUEST_METHOD"] != "POST") || (!isset($_SESSION["user_id"])) || 
         if (move_uploaded_file($tempName, $targetPath)) {
     
 
-        $update_menu_item_info_query = "UPDATE menu_item SET menu_item_img = '$fileName',  menu_item_img_desc = '$menu_item_img_desc' WHERE id = $menu_item_info_id;";
+        $update_menu_item_info_query = "UPDATE menu_item SET entre_menu_item_img = '$fileName',  entre_menu_item_img_desc = '$entre_menu_item_img_desc' WHERE id = $entre_menu_item_info_id;";
 
         $menu_item_info_result = mysqli_query($conn, $update_menu_item_info_query);
 
@@ -48,17 +48,17 @@ if (($_SERVER["REQUEST_METHOD"] != "POST") || (!isset($_SESSION["user_id"]))) {
 } elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && (isset($_SESSION["user_id"])) && isset($_POST['submit_update_menu_item_info'])) {
 
     // $fileName = $_FILES["image"]["name"];
-    $menu_item_info_id = filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT);
-    $menu_item_num = filter_var($_POST['menu_item_num'], FILTER_SANITIZE_NUMBER_INT);
-    $menu_item_name = filter_var($_POST['menu_item_name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $menu_item_desc = filter_var($_POST['menu_item_desc'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $menu_item_price = filter_var($_POST['menu_item_price'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $menu_item_text = filter_var($_POST['menu_item_text'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $entre_menu_item_info_id = filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT);
+    $entre_menu_item_num = filter_var($_POST['entre_menu_item_num'], FILTER_SANITIZE_NUMBER_INT);
+    $entre_menu_item_name = filter_var($_POST['entre_menu_item_name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $entre_menu_item_desc = filter_var($_POST['entre_menu_item_desc'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $entre_menu_item_price = filter_var($_POST['entre_menu_item_price'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $entre_menu_item_text = filter_var($_POST['entre_menu_item_text'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
     // $news_article_text = htmlspecialchars($_POST["news_article_text"]
     // , ENT_QUOTES);
 
-        $update_menu_item_info_query = "UPDATE menu_item SET menu_item_num = '$menu_item_num',  menu_item_name = '$menu_item_name', menu_item_desc = '$menu_item_desc', menu_item_price = '$menu_item_price', menu_item_text = '$menu_item_text' WHERE id = $menu_item_info_id;";
+        $update_menu_item_info_query = "UPDATE menu_item SET entre_menu_item_num = '$entre_menu_item_num',  entre_menu_item_name = '$entre_menu_item_name', entre_menu_item_desc = '$entre_menu_item_desc', entre_menu_item_price = '$entre_menu_item_price', entre_menu_item_text = '$entre_menu_item_text' WHERE id = $entre_menu_item_info_id;";
 
         $menu_item_info_result = mysqli_query($conn, $update_menu_item_info_query);
 
