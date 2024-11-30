@@ -62,10 +62,11 @@ $user = $result->fetch_assoc();
   <!-- <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml"> -->
 
   <!-- FONT AWESOME -->
-  <script
+  <!-- <script
       src="https://kit.fontawesome.com/7a6c6b42a6.js"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
+    <script src="https://kit.fontawesome.com/097e6a8a28.js" crossorigin="anonymous"></script>
     <script src="assets/js/shopping-cart.js" defer></script>
 
   <!-- 
