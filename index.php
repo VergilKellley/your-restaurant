@@ -214,6 +214,7 @@
             <div class="cart-box">
                 <div class="cart-icon">
                     <i class="fas fa-cart-arrow-down fa-2x"></i>
+                    <!-- <i class="fa-solid fa-cart-shopping"></i> -->
                 </div>
                 <div class="whole-cart-window hide">
                     <form action="checkout.php" method="post" enctype="multipart/form-data">
@@ -223,7 +224,6 @@
                     <div class="subtotal">Subtotal: 0.00</div>
                     <!-- <div class="checkout"></div> -->
                     <button class="checkout" type="submit" name="checkout-btn">Checkouts</button>
-                    
                     <!-- <div class="view-cart">View Cart</div> -->
                     </form>
                 </div>
