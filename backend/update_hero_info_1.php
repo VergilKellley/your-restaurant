@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] != "GET") {
  
         <section style='padding: 20px; width:100vw; display:flex; justify-content: center; align-content:center'>
             <div style='width: 100%; max-width: 525px;'>
-                <a style='font-size:18px' href="../edit_hero_info.php"> Back</a>
+                <a style='font-size:18px' href="../edit_hero_info#hero-info-1"> Back</a>
                 <h2 style='font-size:22px; padding: 30px;'>Edit "<?= $hero_info_1['hero_large_text_1'] ?>"</h2>
                 
                 <form style=" display:flex; flex-direction:column; gap 1rem; width:100%"
