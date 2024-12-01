@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] != "GET") {
 
         <section style='padding: 20px; width:100vw; display:flex; justify-content: center; align-content:center'>
             <div style='width: 100%; max-width: 525px;'>
-                <a style='font-size:18px' href="../edit_hero_info.php"> Back</a>
+                <a style='font-size:18px' href="../edit_hero_info#hero-info-2"> Back</a>
                 <h2 style='font-size:22px; padding: 30px;'>Edit "<?= $hero_info_2['hero_large_text_2'] ?>"</h2>
                 
                 <form style=" display:flex; flex-direction:column; gap 1rem; width:100%"
@@ -44,12 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] != "GET") {
 
                     <div style="display: flex; flex-direction:column; font-size:22px; gap: 1rem">
 
-                        <label for="hero_img">hero image 2</label>
-                        <input style=" font-size: 22px; padding:10px" type="file" name="image" id="hero_img"
-                            value="<?= $hero_info_2['hero_img_2'] ?>" />
-
-                        <label for="hero_img_desc_2">hero image description 2</label>
-                        <input style="padding:10px; font-size: 22px" type="text" name="hero_img_desc_2" id="hero_img_desc_2" value="<?= $hero_info_2['hero_img_desc_2'] ?>" />
+                        
 
                         <label for="hero_top_text">small top text 2</label>
                         <input style="padding:10px; font-size: 22px" type="text" name="hero_top_text_2"
