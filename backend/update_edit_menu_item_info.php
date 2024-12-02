@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] != "GET") {
     exit("GET request method required");
 } elseif($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
   $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
-  $menu_item_query = "SELECT * FROM menu_item WHERE id = $id";
+  $menu_item_query = "SELECT * FROM menu_item WHERE entre_menu_item_num != 0 AND id = $id";
   $menu_item_result = mysqli_query($conn, $menu_item_query);
   $menu_item = mysqli_fetch_assoc($menu_item_result);
 } else {
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] != "GET") {
  
         <section style='padding: 20px; width:100vw; display:flex; justify-content: center; align-content:center'>
             <div style='width: 100%; max-width: 525px;'>
-                <a style='font-size:18px' href="../edit_menu_item_info.php"> Back</a>
+                <a style='font-size:18px' href="../edit_menu_item_info#item-num-name-desc"> Back</a>
                 <h2 style='font-size:22px; padding: 30px;'>Edit</h2>
                 
                 <form style=" display:flex; flex-direction:column; gap 1rem; width:100%"
@@ -45,25 +45,25 @@ if ($_SERVER["REQUEST_METHOD"] != "GET") {
                     <div style="display: flex; flex-direction:column; font-size:22px; gap: 1rem">
 
 
-                        <label for="menu_item_num">item number</label>
-                        <input style="padding:10px; font-size: 22px" type="text" name="menu_item_num"
-                            id="menu_item_num" value="<?= $menu_item['menu_item_num'] ?>" />
+                        <label for="entre_menu_item_num">item number</label>
+                        <input style="padding:10px; font-size: 22px" type="text" name="entre_menu_item_num"
+                            id="entre_menu_item_num" value="<?= $menu_item['entre_menu_item_num'] ?>" />
 
-                        <label for="menu_item_name">item name:</label>
-                        <input style="padding:10px; font-size: 22px" type="text" name="menu_item_name"
-                            id="menu_item_name" value="<?= $menu_item['menu_item_name'] ?>" />
+                        <label for="entre_menu_item_name">item name:</label>
+                        <input style="padding:10px; font-size: 22px" type="text" name="entre_menu_item_name"
+                            id="entre_menu_item_name" value="<?= $menu_item['entre_menu_item_name'] ?>" />
 
-                        <label for="menu_item_desc">new or seasonal item:</label>
-                        <input style="padding:10px; font-size: 22px" type="text" name="menu_item_desc"
-                            id="menu_item_desc" value="<?= $menu_item['menu_item_desc'] ?>" />
+                        <label for="entre_menu_item_desc">new or seasonal item:</label>
+                        <input style="padding:10px; font-size: 22px" type="text" name="entre_menu_item_desc"
+                            id="entre_menu_item_desc" value="<?= $menu_item['entre_menu_item_desc'] ?>" />
 
-                        <label for="menu_item_price">item price:</label>
-                        <input style="padding:10px; font-size: 22px" type="text" name="menu_item_price"
-                            id="menu_item_price" value="<?= $menu_item['menu_item_price'] ?>" />
+                        <label for="entre_menu_item_price">item price:</label>
+                        <input style="padding:10px; font-size: 22px" type="text" name="entre_menu_item_price"
+                            id="entre_menu_item_price" value="<?= $menu_item['entre_menu_item_price'] ?>" />
 
-                        <label for="menu_item_text">item description:</label>
-                        <input style="padding:10px; font-size: 22px" type="text" name="menu_item_text"
-                            id="menu_item_text" value="<?= $menu_item['menu_item_text'] ?>" />
+                        <label for="entre_menu_item_text">item description:</label>
+                        <input style="padding:10px; font-size: 22px" type="text" name="entre_menu_item_text"
+                            id="entre_menu_item_text" value="<?= $menu_item['entre_menu_item_text'] ?>" />
 
                         <button style=" font-size: 22px" type="submit" name="submit_update_menu_item_info">Update
                             </button>
