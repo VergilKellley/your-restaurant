@@ -3,13 +3,13 @@ session_start();
 require 'db.php';
 
 // SPECIAL DISH IMG
-if (($_SERVER["REQUEST_METHOD"] != "POST") || (!isset($_SESSION["user_id"])) || (empty($_FILES["image"]["name"])) && isset($_POST["submit_update_menu_item_img"])) {
+if (($_SERVER["REQUEST_METHOD"] != "POST") || (!isset($_SESSION["user_id"])) || (empty($_FILES["image"]["name"])) && isset($_POST["submit_update_dessert_menu_item_img"])) {
     //8056377249 voice mail
     $_SESSION["empty_image"] = 'image NOT changed... click edit and choose an image.';
-    header('location: ../edit_menu_item_info#edit-img');
+    header('location: ../edit_dessert_menu_item_info#edit-img');
        
-} elseif (($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_SESSION["user_id"])) && (!empty($_FILES["image"]["name"])) && isset($_POST["submit_update_menu_item_img"])) {
-    
+} elseif (($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_SESSION["user_id"])) && (!empty($_FILES["image"]["name"])) && isset($_POST["submit_update_dessert_menu_item_img"])) {
+   
     unset ($_SESSION['empty_image']);
 
     
@@ -34,7 +34,7 @@ if (($_SERVER["REQUEST_METHOD"] != "POST") || (!isset($_SESSION["user_id"])) || 
         $menu_item_info_result = mysqli_query($conn, $update_menu_item_info_query);
 
         if(!mysqli_errno($conn)) {
-            header('location: ../edit_menu_item_info');
+            header('location: ../edit_dessert_menu_item_info');
             die();
             } 
         }
@@ -45,8 +45,8 @@ if (($_SERVER["REQUEST_METHOD"] != "POST") || (!isset($_SESSION["user_id"])) || 
 if (($_SERVER["REQUEST_METHOD"] != "POST") || (!isset($_SESSION["user_id"]))) {
     // exit("GET request method required");
     header('location: ../index');
-} elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && (isset($_SESSION["user_id"])) && isset($_POST['submit_update_menu_item_info'])) {
-
+} elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && (isset($_SESSION["user_id"])) && isset($_POST['submit_update_dessert_menu_item_info'])) {
+    
     // $fileName = $_FILES["image"]["name"];
     $dessert_menu_item_info_id = filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT);
     $dessert_menu_item_num = filter_var($_POST['dessert_menu_item_num'], FILTER_SANITIZE_NUMBER_INT);
