@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] != "GET") {
                 <h2 style='font-size:22px; padding: 30px;'>Edit</h2>
                 
                 <form style=" display:flex; flex-direction:column; gap 1rem; width:100%"
-                    action="update_menu_item_info_logic.php" enctype="multipart/form-data" method="POST">
+                    action="update_edit_dessert_menu_item_info_logic.php" enctype="multipart/form-data" method="POST">
 
                     <input type="hidden" name="id" value="<?php $id ?>" placeholder="<?= $id ?>">
 
@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] != "GET") {
                         <input style="padding:10px; font-size: 22px" type="text" name="dessert_menu_item_text"
                             id="dessert_menu_item_text" value="<?= $menu_item['dessert_menu_item_text'] ?>" />
 
-                        <button style=" font-size: 22px" type="submit" name="submit_update_menu_item_info">Update
+                        <button style=" font-size: 22px" type="submit" name="submit_update_dessert_menu_item_info">Update
                             </button>
                     </div>
                 </form>
