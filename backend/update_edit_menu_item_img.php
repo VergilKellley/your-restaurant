@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] != "GET") {
 
         <section style='padding: 20px; width:100vw; display:flex; justify-content: center; align-content:center'>
             <div style='width: 100%; max-width: 525px;'>
-                <a style='font-size:18px' href="../edit_menu_item_info.php"> Back</a>
+                <a style='font-size:18px' href="../edit_menu_item_info#menu-img-desc"> Back</a>
                 <h2 style='font-size:22px; padding: 30px;'>Edit</h2>
 
                 <form style=" display:flex; flex-direction:column; gap 1rem; width:100%"
@@ -44,15 +44,15 @@ if ($_SERVER["REQUEST_METHOD"] != "GET") {
 
                     <div style="display: flex; flex-direction:column; font-size:22px; gap: 1rem">
 
-                        <label for="menu_item_img">image</label>
+                        <label for="entre_menu_item_img">image</label>
 
                         <input style=" font-size: 22px; padding:10px" type="file" name="image" id="menu_item_img"
-                            value="<?= $menu_item_info['menu_item_img'] ?>" />
+                            value="<?= $menu_item_info['entre_menu_item_img'] ?>" />
 
-                        <label for="menu_item_img_desc">image description</label>
+                        <label for="entre_menu_item_img_desc">image description</label>
 
-                        <input style="padding:10px; font-size: 22px" type="text" name="menu_item_img_desc"
-                            id="menu_item_img_desc" value="<?= $menu_item_info['menu_item_img_desc'] ?>" />
+                        <input style="padding:10px; font-size: 22px" type="text" name="entre_menu_item_img_desc"
+                            id="entre_menu_item_img_desc" value="<?= $menu_item_info['entre_menu_item_img_desc'] ?>" />
 
                         <button style=" font-size: 22px" type="submit" name="submit_update_menu_item_img">Update
                         </button>
