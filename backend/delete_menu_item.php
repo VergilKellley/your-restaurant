@@ -13,7 +13,7 @@ if (isset($_POST['submit_delete_menu_item']))
     $delete_menu_item_result = mysqli_query($conn, $delete_menu_item_query);
 
     if($delete_menu_item_result) {
-        header("Location: ../edit_menu_item_info.php");
+        header("Location: ../index");
         exit();
     } else {
         echo "Something went wrong.";
