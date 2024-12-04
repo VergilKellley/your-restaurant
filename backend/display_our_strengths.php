@@ -24,5 +24,9 @@ if ($resultCheck > 0) {
     $our_strengths_img_desc_4 = $row['our_strengths_img_desc_4'];
     $our_strengths_img_title_4 = $row['our_strengths_img_title_4'];
     $our_strengths_img_text_4 = $row['our_strengths_img_text_4'];
+    $our_strengths_right_img = $row['our_strengths_right_img'];
+    $our_strengths_right_img_desc = $row['our_strengths_right_img_desc'];
+    $our_strengths_left_img = $row['our_strengths_left_img'];
+    $our_strengths_left_img_desc = $row['our_strengths_left_img_desc'];
     }
 }
