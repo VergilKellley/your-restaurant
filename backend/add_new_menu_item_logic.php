@@ -14,13 +14,13 @@ if (($_SERVER["REQUEST_METHOD"] != "POST") || (!isset($_SESSION["user_id"]))) {
 
     unset ($_SESSION['empty_image']);
 
-    $menu_item_num = $_POST["menu_item_num"];
-    $menu_item_name = $_POST["menu_item_name"];
-    $menu_item_desc = $_POST["menu_item_desc"];
-    $menu_item_price = $_POST["menu_item_price"];
-    $menu_item_text = $_POST["menu_item_text"];
+    $entre_menu_item_num = $_POST["entre_menu_item_num"];
+    $entre_menu_item_name = $_POST["entre_menu_item_name"];
+    $entre_menu_item_desc = $_POST["entre_menu_item_desc"];
+    $entre_menu_item_price = $_POST["entre_menu_item_price"];
+    $entre_menu_item_text = $_POST["entre_menu_item_text"];
     $fileName = $_FILES["image"]["name"];
-    $menu_item_img_desc = $_POST["menu_item_img_desc"];
+    $entre_menu_item_img_desc = $_POST["entre_menu_item_img_desc"];
 
     
     // use below if text has quotes
@@ -33,7 +33,7 @@ if (($_SERVER["REQUEST_METHOD"] != "POST") || (!isset($_SESSION["user_id"]))) {
     $targetPath = "../assets/images/".$fileName;
     if(in_array($ext, $allowedTypes)) {
         if (move_uploaded_file($tempName, $targetPath)) {
-            $sql = "INSERT INTO menu_item (menu_item_num, menu_item_name, menu_item_desc, menu_item_price, menu_item_text, menu_item_img, menu_item_img_desc) VALUES ('$menu_item_num','$menu_item_name', '$menu_item_desc', '$menu_item_price', '$menu_item_text', '$fileName', '$menu_item_img_desc')";
+            $sql = "INSERT INTO menu_item (entre_menu_item_num, entre_menu_item_name, entre_menu_item_desc, entre_menu_item_price, entre_menu_item_text, entre_menu_item_img, entre_menu_item_img_desc) VALUES ('$entre_menu_item_num','$entre_menu_item_name', '$entre_menu_item_desc', '$entre_menu_item_price', '$entre_menu_item_text', '$fileName', '$entre_menu_item_img_desc')";
             if(mysqli_query($conn, $sql)){
                 // echo "Your image has been uploaded";
                 header("Location: ../add_menu_item");
