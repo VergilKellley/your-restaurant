@@ -33,9 +33,10 @@ if (($_SERVER["REQUEST_METHOD"] != "GET") || (!isset($_SESSION["user_id"]))) {
     <body>
         <section style='padding: 20px; width:100vw; display:flex; justify-content: center; align-content:center'>
             <div style='width: 100%; max-width: 525px;'>
-                <a style='font-size:18px' href="../edit_about_info.php"> Back</a>
-                <h2 style='font-size:22px; padding: 30px;'>Edit</h2>
-                
+                <a style='font-size:18px' href="../edit_about_info#large-img"> Back</a>
+                <!-- <h2 style='font-size:22px; padding: 30px;'>Edit</h2> -->
+                 <br>
+                 <br>       
                 <form style=" display:flex; flex-direction:column; gap 1rem; width:100%"
                     action="update_about_info_logic.php" enctype="multipart/form-data" method="POST">
 
