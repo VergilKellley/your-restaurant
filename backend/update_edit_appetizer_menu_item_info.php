@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] != "GET") {
  
         <section style='padding: 20px; width:100vw; display:flex; justify-content: center; align-content:center'>
             <div style='width: 100%; max-width: 525px;'>
-                <a style='font-size:18px' href="../edit_appetizer_menu_item_info#item-num-name-desc"> Back</a>
+                <a style='font-size:18px' href="../edit_appetizer_menu_item_info#app-img-desc"> Back</a>
                 <h2 style='font-size:22px; padding: 30px;'>Edit</h2>
                 
                 <form style=" display:flex; flex-direction:column; gap 1rem; width:100%"
