@@ -245,6 +245,12 @@ body.nav-active { overflow: hidden; }
 
 .title-4 { font-size: var(--fontSize-title-4); }
 
+.title-wrapper-container {
+  min-width:380px;
+}
+
+
+
 .body-1 {
   font-size: var(--fontSize-body-1);
   line-height: var(--lineHeight-6);
@@ -667,6 +673,7 @@ body.nav-active { overflow: hidden; }
   background-color: var(--smoky-black-1);
   top: 0;
   left: -360px;
+  margin-right: 400px !important;
   bottom: 0;
   max-width: 360px;
   width: 100%;
@@ -755,6 +762,54 @@ body.nav-active { overflow: hidden; }
 .navbar .contact-label { margin-block-end: 10px; }
 
 .navbar::-webkit-scrollbar-thumb { background-color: var(--white-alpha-10); }
+
+.dropdown-menu {
+  display: none;
+}
+
+.menu-bar ul li:hover .dropdown-menu {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: #000;
+}
+
+.menu-bar ul li .dropdown-menu ul li:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.menu-bar ul li:hover .dropdown-menu ul {
+  margin: 10px;
+}
+
+.dropdown-menu ul li {
+  width: 150px;
+  padding: 10px;
+}
+
+.fas {
+  float:right;
+  margin-left: 10px;
+  padding-top: 3px;
+}
+
+.dropdown-menu-1 {
+  display: none;
+}
+
+.dropdown-menu ul:hover .dropdown-menu-1 {
+  display: block !important;
+  background-color: #000;
+  margin-left: 150px;
+  position: absolute;
+  top:0;
+}
+
+.dropdown-menu-1 ul li {
+  width: 170px;
+}
 
 .overlay {
   position: fixed;
@@ -1061,6 +1116,7 @@ body.nav-active { overflow: hidden; }
 .menu-card {
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
   gap: 20px;
 }
 
@@ -1091,6 +1147,7 @@ body.nav-active { overflow: hidden; }
   text-transform: uppercase;
   padding-inline: 10px;
   margin-block-start: 10px;
+  padding-top: 5px;
 }
 
 .menu-card .span {
@@ -1643,7 +1700,47 @@ textarea.input-field {
 
 }
 
+@media (max-width: 580px) {
+  .title-wrapper-container {
+    min-width: auto !important;
+  }
+  .menu-card .card-text {
+    width:200px;
+  }
+  .menu-card .span {
+    margin-block: 0;
+    /* margin-left: 10px; */
+  }
+  .name-price-container {
+    display: flex !important;
+    flex-direction: row !important;
+  }
+  /* .menu-card .badge {
+    margin-block-start: 0;
+  } */
+  /* .mobile-name-price {
+    flex-direction: column;
+  } */
+  .menu-card {
+    align-items: center;
+  } 
+}
 
+@media(max-width:345px) {
+  .menu-card {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 970px) {
+  .grid-list { 
+    grid-template-columns: 1fr !important;
+  }
+  .menu-card {
+    justify-content: space-around;
+  }
+}
 
 
 
